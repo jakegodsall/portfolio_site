@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom_tagss %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,22 +13,12 @@
 <body>
     {% include "portfolio/partials/header.html" %}
     <main class="container">
-        {% include "portfolio/partials/hero.html" %}
+<!--        {% include "portfolio/partials/hero.html" %}-->
 
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Section One</h2>
-                <p>Content for the first section goes here.</p>
-            </div>
-            <div class="col-md-6">
-                <h2>Section Two</h2>
-                <p>Content for the second section goes here.</p>
-            </div>
-        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; {% current_year %} Jake Godsall. All rights reserved.</p>
     </footer>
 </body>
 </html>
