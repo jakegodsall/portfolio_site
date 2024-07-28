@@ -1,18 +1,13 @@
 <header>
-    <nav class="">
-        <nav class="navbar">
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="navbar-collapse" id="navbarNav">
-            <ul>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact Me</a></li>
-            </ul>
-        </div>
-    </nav>
+    <nav class="navbar">
+        {% include "portfolio/partials/hamburger-button.html" %}
+<!--        <div class="navbar-collapse" id="navbarNav">-->
+<!--            <ul>-->
+<!--                <li><a href="#">About Me</a></li>-->
+<!--                <li><a href="#">Projects</a></li>-->
+<!--                <li><a href="#">Contact Me</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+        {% include "portfolio/partials/mobile-menu.html" %}
     </nav>
 </header>

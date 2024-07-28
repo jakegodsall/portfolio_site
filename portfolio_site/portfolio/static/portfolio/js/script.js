@@ -1,8 +1,8 @@
 const hamburger = document.getElementById("hamburger");
 
-hamburger.addEventListener("click", toggleMenu);
+hamburger.addEventListener("click", toggleMobileMenu);
 
-function toggleMenu() {
-    const navbarNav = document.getElementById("navbarNav");
-    navbarNav.classList.toggle("active");
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.classList.toggle("active");
 }
