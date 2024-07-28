@@ -16,7 +16,7 @@ def portfolio(request):
     skills = Skill.objects.all()
 
     # Render the portfolio page with projects, skills, and the contact form
-    return render(request, 'portfolio/portfolio.html', {
+    return render(request, 'portfolio/index.html', {
         'projects': projects,
         'skills': skills,
     })
