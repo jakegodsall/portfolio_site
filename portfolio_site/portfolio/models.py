@@ -8,6 +8,8 @@ class Skill(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
 
+    is_for_skills_section = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name
 
