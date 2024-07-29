@@ -3,7 +3,7 @@ from django.db import models
 
 class Skill(models.Model):
     name = models.CharField(max_length=100)
-    svg_icon = models.TextField(blank=True)
+    svg_icon = models.CharField(max_length=255, blank=True)
 
     created_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)

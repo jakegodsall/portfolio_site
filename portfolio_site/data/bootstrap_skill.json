@@ -1,7 +1,17 @@
 [
   {
     "name": "Java",
-    "svg_icon": "",
+    "svg_icon": "portfolio/svg_icons/java.svg",
+    "is_for_skills_section": "True"
+  },
+  {
+    "name": "Python",
+    "svg_icon": "portfolio/svg_icons/python.svg",
+    "is_for_skills_section": "True"
+  },
+  {
+    "name": "Django",
+    "svg_icon": "portfolio/svg_icons/django.svg",
     "is_for_skills_section": "True"
   }
 ]
