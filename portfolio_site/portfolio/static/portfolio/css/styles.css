@@ -169,3 +169,11 @@ a, a:active, a:visited, a:hover {
 	font-size: 2rem;
 	gap: 2rem;
 }
+
+/* MAIN SECTION */
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

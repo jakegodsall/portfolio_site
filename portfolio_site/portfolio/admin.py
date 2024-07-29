@@ -3,7 +3,7 @@ from .models import Skill, Project
 
 
 class SkillAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('name', 'is_for_skills_section')
     search_fields = ('name',)
 
 

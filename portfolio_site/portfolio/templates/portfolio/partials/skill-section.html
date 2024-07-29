@@ -1,0 +1,11 @@
+
+
+<section>
+    <h2>Skill Section</h2>
+
+    <ul>
+        {% for skill in skills %}
+        <img width="50" height="50" src="{{ skill.svg_icon.url }}" alt="{{ skill.name }} icon">
+        {% endfor %}
+    </ul>
+</section>
