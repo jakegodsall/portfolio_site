@@ -5,6 +5,11 @@
     "is_for_skills_section": "True"
   },
   {
+    "name": "Spring",
+    "svg_icon": "portfolio/svg_icons/spring.svg",
+    "is_for_skills_section": "True"
+  },
+  {
     "name": "Python",
     "svg_icon": "portfolio/svg_icons/python.svg",
     "is_for_skills_section": "True"
@@ -12,6 +17,26 @@
   {
     "name": "Django",
     "svg_icon": "portfolio/svg_icons/django.svg",
+    "is_for_skills_section": "True"
+  },
+  {
+    "name": "JavaScript",
+    "svg_icon": "portfolio/svg_icons/js.svg",
+    "is_for_skills_section": "True"
+  },
+  {
+    "name": "React.js",
+    "svg_icon": "portfolio/svg_icons/reactjs.svg",
+    "is_for_skills_section": "True"
+  },
+  {
+    "name": "Next.js",
+    "svg_icon": "portfolio/svg_icons/nextjs.svg",
+    "is_for_skills_section": "True"
+  },
+  {
+    "name": "MySQL",
+    "svg_icon": "portfolio/svg_icons/mysql.svg",
     "is_for_skills_section": "True"
   }
 ]

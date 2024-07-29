@@ -1,9 +1,9 @@
 
 
-<section>
-    <h2>Skill Section</h2>
-
-    <ul>
+<section class="skills-section">
+    <h2 class="skills-section_title">Skills</h2>
+    <p class="skills-section_description">With a robust foundation in both front-end and back-end development, I leverage a diverse array of programming languages and frameworks to build dynamic, efficient, and scalable web applications. Below are the technologies I proficiently use:</p>
+    <ul class="skills-section_skill-list">
         {% for skill in skills %}
         <img width="50" height="50" src="{{ skill.svg_icon.url }}" alt="{{ skill.name }} icon">
         {% endfor %}
