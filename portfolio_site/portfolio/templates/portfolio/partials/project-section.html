@@ -1,0 +1,9 @@
+<section class="skills-section box-shadow">
+    <h1>Projects</h1>
+
+    {% for project in projects %}
+    <div>
+        {% include "portfolio/partials/project.html" with project=project %}
+    </div>
+    {% endfor %}
+</section>

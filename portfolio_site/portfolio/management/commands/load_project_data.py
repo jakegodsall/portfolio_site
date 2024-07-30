@@ -7,6 +7,7 @@ from django.db import connection
 
 from portfolio.models import Project, Skill
 
+
 class Command(BaseCommand):
     help = 'Load initial data into the Project table from a JSON file'
 
