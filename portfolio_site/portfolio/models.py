@@ -22,13 +22,12 @@ class Project(models.Model):
     end_date = models.DateField(blank=True, null=True)
     live_site_url = models.URLField(blank=True)
     github_repo_url = models.URLField(blank=True)
-    image = models.ImageField(upload_to='project_images/', blank=True, null=True)
+    image = models.ImageField(upload_to='portfolio/project_images/', blank=True, null=True)
 
     skills = models.ManyToManyField(Skill, related_name='projects')
 
     created_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
-
 
     def __str__(self):
         return self.name

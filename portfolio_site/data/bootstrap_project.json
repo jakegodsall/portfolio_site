@@ -1,0 +1,41 @@
+[
+    {
+        "name": "AI Chatbot",
+        "description": "A chatbot that uses AI to answer questions.",
+        "detailed_description": "This project involves building an AI chatbot using natural language processing and machine learning techniques. The bot can answer questions, provide recommendations, and engage in small talk.",
+        "start_date": "2023-01-01",
+        "end_date": "2023-06-01",
+        "live_site_url": "https://example.com/ai-chatbot",
+        "github_repo_url": "https://github.com/example/ai-chatbot",
+        "image": "portfolio/project_images/ai_chatbot.png",
+        "skills": [3, 4],
+        "created_date": "2023-01-01T10:00:00Z",
+        "update_date": "2023-01-01T10:00:00Z"
+    },
+    {
+        "name": "E-commerce Website",
+        "description": "An online store for various products.",
+        "detailed_description": "This project is an e-commerce website that allows users to browse and purchase products online. Features include a product catalog, shopping cart, and checkout process.",
+        "start_date": "2022-05-15",
+        "end_date": "2022-11-20",
+        "live_site_url": "https://example.com/ecommerce-website",
+        "github_repo_url": "https://github.com/example/ecommerce-website",
+        "image": "portfolio/project_images/ecommerce_website.png",
+        "skills": [1, 2, 5, 6, 8],
+        "created_date": "2022-05-15T12:00:00Z",
+        "update_date": "2022-05-15T12:00:00Z"
+    },
+    {
+        "name": "Mobile App",
+        "description": "A mobile application for task management.",
+        "detailed_description": "This project is a mobile app designed to help users manage their tasks efficiently. It includes features like task creation, reminders, and progress tracking.",
+        "start_date": "2021-09-10",
+        "end_date": "2022-02-28",
+        "live_site_url": "https://example.com/mobile-app",
+        "github_repo_url": "https://github.com/example/mobile-app",
+        "image": "portfolio/project_images/mobile_app.png",
+        "skills": [1, 5, 8],
+        "created_date": "2021-09-10T14:00:00Z",
+        "update_date": "2021-09-10T14:00:00Z"
+    }
+]
