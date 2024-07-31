@@ -13,3 +13,8 @@ document.getElementById("mobile-menu").addEventListener("click", function(event)
         hamburger.classList.remove("active");
     }
 });
+
+document.getElementById('explore-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+});

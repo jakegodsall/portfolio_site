@@ -47,6 +47,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	background-color: var(--background-color);
+	scroll-behavior: smooth;
 }
 ol, ul {
 	list-style: none;
@@ -176,11 +177,54 @@ a, a:active, a:visited, a:hover {
 }
 
 /* MAIN SECTION */
-
+e
 .container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+/* HERO SECTION */
+
+.hero {
+    display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 600px;
+	line-height: 1.5;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin: 0 0 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 0 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #21a1f1;
+    color: white;
 }
 
 /* SKILLS SECTION */
@@ -190,10 +234,9 @@ a, a:active, a:visited, a:hover {
 	align-items: center;
 	text-align: center;
 	background-color: #fff;
-	margin: 0.5rem;
+	margin: 0.5rem 0.5rem 3rem;
 	padding: 2rem;
 	border-radius: 1rem;
-	margin-bottom: 3rem;
 }
 
 .skills-section_title {
