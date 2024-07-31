@@ -1,9 +1,7 @@
-<section class="skills-section box-shadow">
-    <h1>Projects</h1>
-
+<section class="project-section">
+    <h1 class="project-section_title">Projects</h1>
+    <p class="project-section_description">Explore my diverse portfolio of projects, showcasing my skills and creativity in action.</p>
     {% for project in projects %}
-    <div>
         {% include "portfolio/partials/project-detail.html" with project=project %}
-    </div>
     {% endfor %}
 </section>

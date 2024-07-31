@@ -1,6 +1,9 @@
 <section class="skills-section box-shadow">
     <h2 class="skills-section_title">Skills</h2>
-    <p class="skills-section_description">With a robust foundation in both front-end and back-end development, I leverage a diverse array of programming languages and frameworks to build dynamic, efficient, and scalable web applications. Below are the technologies I proficiently use on a daily basis:</p>
+    <div class="skills-section_description">
+        <p>With a robust foundation in both front-end and back-end development, I leverage a diverse array of programming languages and frameworks to build dynamic, efficient, and scalable web applications.</p>
+        <p>Here are the technologies I proficiently use on a daily basis:</p>
+    </div>
     <ul class="skills-section_skill-list">
         {% for skill in skills %}
         <img width="50" height="50" src="{{ skill.svg_icon.url }}" alt="{{ skill.name }} icon">
