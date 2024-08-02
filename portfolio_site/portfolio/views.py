@@ -17,12 +17,16 @@ def portfolio(request):
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
 
+            print("FORM DATA IS VALID")
+
             send_mail(
                 f"Message sent from {name}",
                 message,
                 email,
                 [os.getenv('CONTACT_EMAIL_ADDRESS')]
             )
+        else:
+            print("FORM DATA IS NOT VALID")
     else:
         form = ContactForm()
 
