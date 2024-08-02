@@ -1,0 +1,16 @@
+<section class="contact-form_container">
+    <h2>Contact Me</h2>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="contact-form_group">
+            {{ contact_form.name.label_tag }} {{ contact_form.name }}
+        </div>
+        <div class="contact-form_group">
+            {{ contact_form.email.label_tag }} {{ contact_form.email }}
+        </div>
+        <div class="contact-form_group">
+            {{ contact_form.message.label_tag }} {{ contact_form.message }}
+        </div>
+        <button type="submit" class="btn btn-primary box-shadow">Submit</button>
+    </form>
+</section>

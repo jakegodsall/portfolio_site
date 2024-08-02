@@ -43,4 +43,5 @@ def portfolio(request):
     return render(request, 'portfolio/index.html', {
         'skills': skills,
         'projects': projects,
+        'contact_form': form
     })
