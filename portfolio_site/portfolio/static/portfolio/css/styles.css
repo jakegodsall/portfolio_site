@@ -438,6 +438,15 @@ e
 	border: none;
 }
 
+.error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+}
+.is-invalid {
+	border-color: red;
+}
+
 /* UTILITY CLASSES */
 
 .box-shadow {
