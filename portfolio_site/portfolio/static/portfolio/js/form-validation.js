@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const nameError = document.getElementById('nameError');
         if (!FormValidator.nameIsValid(nameInput)) {
             nameInput.classList.add('is-invalid');
-            nameError.style.display = 'block';
+            nameError.classList.add('active');
             return false;
         } else {
             nameInput.classList.remove('is-invalid');
-            nameError.style.display = 'none';
+            nameError.classList.remove('active');
             return true;
         }
     }
@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const emailError = document.getElementById('emailError');
         if (!FormValidator.emailIsValid(emailInput)) {
             emailInput.classList.add('is-invalid');
-            emailError.style.display = 'block';
+            emailError.classList.add('active')
             return false;
         } else {
             emailInput.classList.remove('is-invalid');
-            emailError.style.display = 'none';
+            emailError.classList.remove('active');
             return true;
         }
     }
@@ -74,11 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const messageError = document.getElementById('messageError');
         if (!FormValidator.validateMessage(messageInput)) {
             messageInput.classList.add('is-invalid');
-            messageError.style.display = 'block';
+            messageError.classList.add('active');
             return false;
         } else {
             messageInput.classList.remove('is-invalid');
-            messageError.style.display = 'none';
+            messageError.classList.remove('active');
             return true;
         }
     }

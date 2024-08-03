@@ -439,10 +439,18 @@ e
 }
 
 .error-message {
-            color: red;
-            font-size: 0.9em;
-            display: none;
+	color: red;
+	font-size: 0.9em;
+	overflow: hidden;
+	height: 0;
+	padding: 0;
+    transition: height 0.5s ease;
 }
+
+.error-message.active {
+    height: 2rem;
+}
+
 .is-invalid {
 	border-color: red;
 }
