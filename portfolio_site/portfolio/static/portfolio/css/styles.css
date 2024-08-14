@@ -280,8 +280,23 @@ e
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	column-gap: 1rem;
-	row-gap: 1.5rem;
+	column-gap: 1.5rem;
+	row-gap: 3rem;
+}
+
+/* SKILL DETAIL */
+
+.skill-detail {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.25rem;
+}
+
+.skill-detail_name {
+	font-size: 1.1rem;
+	font-weight: 500;
+	text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* PROJECT SECTION */
@@ -308,7 +323,6 @@ e
 	line-height: 1.5;
 	max-width: 450px;
 }
-
 
 /* PROJECT DETAIL */
 

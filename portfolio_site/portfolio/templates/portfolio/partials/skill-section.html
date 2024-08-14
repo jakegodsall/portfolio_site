@@ -6,7 +6,7 @@
     </div>
     <ul class="skills-section_skill-list">
         {% for skill in skills %}
-        <img width="50" height="50" src="{{ skill.svg_icon.url }}" alt="{{ skill.name }} icon">
+            {% include "portfolio/partials/skill-detail.html" %}
         {% endfor %}
     </ul>
 </section>
