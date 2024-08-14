@@ -228,6 +228,29 @@ e
     color: white;
 }
 
+/* ABOUT ME SECTION */
+
+.aboutme-section {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	padding: 2rem;
+	border-radius: 1rem;
+	margin-bottom: 3rem;
+}
+
+.aboutme-section_title {
+	font-size: 2rem;
+	margin-bottom: 2rem;
+}
+
+.aboutme-section_content {
+	line-height: 1.5;
+}
+
 /* SKILLS SECTION */
 .skills-section {
 	display: flex;
@@ -245,12 +268,12 @@ e
 	margin-bottom: 2rem;
 }
 
-.skills-section_description {
+.skills-section_content {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 	margin-bottom: 2rem;
-	line-height: 1.25;
+	line-height: 1.5;
 }
 
 .skills-section_skill-list {
@@ -280,9 +303,9 @@ e
 	margin-bottom: 2rem;
 }
 
-.project-section_description {
+.project-section_content {
 	margin-bottom: 2rem;
-	line-height: 1.25;
+	line-height: 1.5;
 	max-width: 450px;
 }
 
