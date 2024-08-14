@@ -10,15 +10,15 @@
     <link href="{% static 'portfolio/css/styles.css' %}" rel="stylesheet" />
 </head>
 <body>
-    {% include "portfolio/partials/header.html" %}
+    {% include "portfolio/partials/header/header.html" %}
     <main class="container">
-        {% include "portfolio/partials/hero-section.html" %}
-        {% include "portfolio/partials/about-me.html" %}
-        {% include "portfolio/partials/skill-section.html" %}
-        {% include "portfolio/partials/project-section.html" %}
-        {% include "portfolio/partials/contact-section.html" %}
+        {% include "portfolio/partials/hero/hero-section.html" %}
+        {% include "portfolio/partials/about/about-me.html" %}
+        {% include "portfolio/partials/skill/skill-section.html" %}
+        {% include "portfolio/partials/project/project-section.html" %}
+        {% include "portfolio/partials/contact/contact-section.html" %}
     </main>
-    {% include "portfolio/partials/footer.html" %}
+    {% include "portfolio/partials/footer/footer.html" %}
 <script src="{% static 'portfolio/js/script.js' %}"></script>
 <script src="{% static 'portfolio/js/form-validation.js' %}"></script>
 </body>

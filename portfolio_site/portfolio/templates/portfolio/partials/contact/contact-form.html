@@ -1,0 +1,20 @@
+<form id="contact-form" method="post" novalidate>
+    {% csrf_token %}
+    <div class="contact-form_group">
+        {{ contact_form.name.label_tag }}
+        {{ contact_form.name }}
+        <div class="error-message" id="nameError">Name is required and must be less than 100 characters.</div>
+    </div>
+    <div class="contact-form_group">
+        {{ contact_form.email.label_tag }}
+        {{ contact_form.email }}
+        <div class="error-message" id="emailError">Please enter a valid email address.</div>
+
+    </div>
+    <div class="contact-form_group">
+        {{ contact_form.message.label_tag }}
+        {{ contact_form.message }}
+        <div class="error-message" id="messageError">Message is required.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
