@@ -430,6 +430,16 @@ e
 	font-size: 0.8rem;
 }
 
+/* CONTACT SECTION */
+
+/* SOCIALS BAR */
+
+.socials-bar {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
 /* CONTACT FORM */
 
 .contact-form_container {
