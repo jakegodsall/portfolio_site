@@ -66,11 +66,10 @@ table {
 }
 
 :root {
+  --black: #1F2626;
   --background-color: #fff;
   --primary-orange: #fa741b;
-  --secondary-color: #e2eaf1;
-  --dark-blue: #007bff;
-  --black: #1F2626 ;
+  --secondary-orange: #fdc096;
 }
 
 .btn {
@@ -85,8 +84,8 @@ table {
 }
 
 .btn:hover {
-  background-color: #21a1f1;
-  color: white;
+  background-color: var(--secondary-orange);
+  color: var(--primary-orange);
 }
 
 .form {
@@ -220,17 +219,19 @@ table {
 }
 
 .project-detail_title {
+  color: var(--primary-orange);
+  font-weight: 300;
   font-size: 1.2rem;
   text-align: center;
   padding: 10px;
-  margin: 1rem 0;
+  margin: 1rem 0 1.5rem;
 }
 
 .project-detail_image-container {
   position: relative;
   width: 100%;
   max-width: 300px;
-  border-bottom: 3px solid var(--secondary-color);
+  border-bottom: 3px solid var(--secondary-orange);
 }
 
 .project-detail_image-container img {
@@ -298,8 +299,9 @@ table {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--secondary-color);
+  background-color: inherit;
   padding: 0.5rem 1rem;
+  border: 2px solid rgb(234, 234, 234);
   border-radius: 1rem;
 }
 
@@ -357,9 +359,17 @@ table {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  margin-bottom: 3rem;
 }
 
 .contact-form_title {
+  margin-bottom: 2rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 2rem;
 }
 

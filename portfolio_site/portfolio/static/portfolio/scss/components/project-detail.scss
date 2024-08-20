@@ -10,17 +10,19 @@
 }
 
 .project-detail_title {
+    color: var(--primary-orange);
+    font-weight: 300;
 	font-size: 1.2rem;
     text-align: center;
     padding: 10px;
-	margin: 1rem 0;
+	margin: 1rem 0 1.5rem;
 }
 
 .project-detail_image-container {
     position: relative;
 	width: 100%;
 	max-width: 300px;
-	border-bottom: 3px solid var(--secondary-color);
+	border-bottom: 3px solid var(--secondary-orange);
 }
 
 .project-detail_image-container img {
@@ -88,8 +90,9 @@
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	background-color: var(--secondary-color);
+	background-color: inherit;
 	padding: 0.5rem 1rem;
+    border: 2px solid rgb(234, 234, 234);
 	border-radius: 1rem;
 }
 
