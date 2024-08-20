@@ -5,7 +5,9 @@
 @use 'base/variables';
 
 // Import component styles
+@use 'components/button';
 @use 'components/contact-form';
+@use 'components/hamburger';
 @use 'components/mobile-menu';
 @use 'components/project-detail';
 @use 'components/skill-detail';

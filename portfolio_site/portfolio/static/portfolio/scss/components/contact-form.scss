@@ -1,15 +1,4 @@
-.contact-form_container {
-	width: 100%;
-    padding: 1rem;
-}
-
-.contact-form_container h2 {
-	font-size: 1.6rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.contact-form_container form {
+.form {
 	display: flex;
 	flex-direction: column;
 	gap: 1.6rem;

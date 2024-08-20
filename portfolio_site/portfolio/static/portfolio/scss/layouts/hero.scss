@@ -14,7 +14,6 @@
 }
 
 .hero h1 {
-    font-size: 2.5em;
     margin: 0 0 20px;
 }
 
@@ -23,18 +22,3 @@
     margin: 0 0 20px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn:hover {
-    background-color: #21a1f1;
-    color: white;
-}

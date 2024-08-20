@@ -31,31 +31,4 @@
 	border-radius: 4px;
 }
 
-.hamburger {
-	display: flex;
-	flex-direction: column;
-	cursor: pointer;
-	z-index: 30;
-	gap: 0.5rem;
-}
-
-.hamburger div {
-	width: 2rem;
-	height: 3px;
-	background-color: #333;
-	transition: all 0.3s ease-in-out;
-}
-
-.hamburger.active div:first-child {
-	transform: translateY(0.5rem) rotate(45deg) ;
-}
-
-.hamburger.active div:nth-child(2) {
-	opacity: 0;
-}
-
-.hamburger.active div:last-child {
-	transform: translateY(-0.8rem) rotate(135deg) ;
-
-}
 
