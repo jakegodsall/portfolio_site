@@ -20,5 +20,5 @@ COPY .. /code/
 EXPOSE 8000
 
 # Run the production server
-ENTRYPOINT ["python", "portfolio_site/manage.py"]
+ENTRYPOINT ["python", "manage.py"]
 CMD ["runserver", "0.0.0.0:8000"]
