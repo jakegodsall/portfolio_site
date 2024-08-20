@@ -1,0 +1,32 @@
+.skills-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	margin: 0.5rem 0.5rem 3rem;
+	padding: 2rem;
+	border-radius: 1rem;
+}
+
+.skills-section_title {
+	font-size: 2rem;
+	margin-bottom: 2rem;
+}
+
+.skills-section_content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-bottom: 2rem;
+	line-height: 1.5;
+}
+
+.skills-section_skill-list {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	column-gap: 1.5rem;
+	row-gap: 3rem;
+}
+

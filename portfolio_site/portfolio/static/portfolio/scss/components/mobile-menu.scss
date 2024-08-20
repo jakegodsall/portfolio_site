@@ -1,0 +1,42 @@
+.mobile-menu {
+	visibility: hidden;
+	z-index: 20;
+    opacity: 0;
+    pointer-events: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.mobile-menu.active {
+	visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu_modal {
+	width: 70%;
+	position: absolute;
+	right: 0;
+	background-color: #fff;
+	top: 0;
+	bottom: 0;
+	padding: 10rem 3rem;
+	transform: translateX(110%);
+	transition: transform 0.5s ease;
+}
+
+.mobile-menu.active .mobile-menu_modal {
+	transform: translateX(0);
+}
+
+.mobile-menu_modal ul {
+	display: flex;
+	flex-direction: column;
+	font-size: 2rem;
+	gap: 2rem;
+}
