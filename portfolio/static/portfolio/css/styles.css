@@ -261,21 +261,13 @@ table {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px 0;
-}
-
-.project-detail_title {
-  color: var(--primary-orange);
-  font-weight: 300;
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 10px;
-  margin: 1rem 0 1.5rem;
+  background-color: var(--primary-grey);
+  border-radius: 20px;
 }
 
 .project-detail_image-container {
   position: relative;
   width: 100%;
-  max-width: 300px;
   border-bottom: 3px solid var(--secondary-orange);
 }
 
@@ -288,44 +280,26 @@ table {
   z-index: 10;
 }
 
-.project-detail_image-container .project-detail_overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+.project-detail_content {
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
   align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
-.project-detail_image-container:hover .project-detail_overlay {
-  opacity: 1;
+.project-detail_title {
+  color: var(--primary-orange);
+  font-weight: 300;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 10px;
 }
 
-.project-detail_overlay .link {
-  color: #fff;
-  background: #007bff;
-  padding: 10px 15px;
-  margin: 0 5px;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-.project-detail_overlay .link:hover {
-  background: #0056b3;
-}
-
-.project-detail_overlay .github {
-  background: #333;
-}
-
-.project-detail_overlay .github:hover {
-  background: #111;
+.project-detail_buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .project-detail_skills-section {
@@ -465,7 +439,6 @@ table {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: var(--primary-grey);
   padding: 2rem;
   border-radius: 1rem;
   margin-bottom: 3rem;
@@ -480,6 +453,7 @@ table {
   margin-bottom: 2rem;
   line-height: 1.5;
   max-width: 450px;
+  color: var(--secondary-text);
 }
 
 .skills-section {
@@ -488,17 +462,18 @@ table {
   align-items: center;
   text-align: center;
   background-color: var(--primary-grey);
-  margin: 0.5rem 0.5rem 3rem;
   padding: 2rem;
   border-radius: 1rem;
+  margin-bottom: 3rem;
 }
 
 .skills-section_title {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 2rem;
 }
 
 .skills-section_content {
+  color: var(--secondary-text);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

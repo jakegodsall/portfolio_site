@@ -4,17 +4,18 @@
 	align-items: center;
 	text-align: center;
 	background-color: var(--primary-grey);
-	margin: 0.5rem 0.5rem 3rem;
 	padding: 2rem;
 	border-radius: 1rem;
+	margin-bottom: 3rem;
 }
 
 .skills-section_title {
-	font-size: 2rem;
+	font-size: 1.6rem;
 	margin-bottom: 2rem;
 }
 
 .skills-section_content {
+	color: var(--secondary-text);
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
