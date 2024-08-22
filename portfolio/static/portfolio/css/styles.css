@@ -65,14 +65,21 @@ table {
   border-spacing: 0;
 }
 
+* {
+  color: var(--primary-text);
+}
+
 :root {
-  --black: #1F2626;
-  --background-color: #fff;
+  --primary-text: #fff;
+  --secondary-text: #C5C5C5;
   --primary-orange: #fa741b;
   --secondary-orange: #fdc096;
+  --primary-grey: #2A2A2A;
+  --background-color: #191919;
 }
 
 .btn {
+  width: 100%;
   display: inline-block;
   padding: 1rem 1.6rem;
   background-color: var(--primary-orange);
@@ -86,6 +93,12 @@ table {
 .btn:hover {
   background-color: var(--secondary-orange);
   color: var(--primary-orange);
+}
+
+.btn-inverse {
+  color: var(--primary-orange);
+  background-color: inherit;
+  border: 2px solid var(--primary-orange);
 }
 
 .form {
@@ -205,6 +218,38 @@ table {
   flex-direction: column;
   font-size: 2rem;
   gap: 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1.6rem;
+}
+
+.navbar ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin-left: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  border-radius: 4px;
 }
 
 .project-detail {
@@ -340,7 +385,7 @@ table {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #fff;
+  background-color: var(--primary-grey);
   padding: 2rem;
   border-radius: 1rem;
   margin-bottom: 3rem;
@@ -378,35 +423,6 @@ table {
   padding: 2rem;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar ul {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar li {
-  margin-left: 20px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #333;
-  padding: 8px 12px;
-  transition: background-color 0.3s;
-}
-
-.navbar a:hover {
-  background-color: #ddd;
-  border-radius: 4px;
-}
-
 .hero {
   display: flex;
   flex-direction: column;
@@ -420,6 +436,16 @@ table {
 .hero-content {
   max-width: 600px;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero_buttons {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .hero h1 {
@@ -427,6 +453,8 @@ table {
 }
 
 .hero p {
+  color: var(--secondary-text);
+  font-weight: 200;
   font-size: 1.2em;
   margin: 0 0 20px;
 }
@@ -437,7 +465,7 @@ table {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #fff;
+  background-color: var(--primary-grey);
   padding: 2rem;
   border-radius: 1rem;
   margin-bottom: 3rem;
@@ -459,7 +487,7 @@ table {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #fff;
+  background-color: var(--primary-grey);
   margin: 0.5rem 0.5rem 3rem;
   padding: 2rem;
   border-radius: 1rem;

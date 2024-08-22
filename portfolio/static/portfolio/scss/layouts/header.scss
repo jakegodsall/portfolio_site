@@ -1,34 +1,4 @@
 .header {
 	padding: 2rem;
+
 }
-
-.navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.navbar ul {
-	display: flex;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-.navbar li {
-	margin-left: 20px;
-}
-
-.navbar a {
-	text-decoration: none;
-	color: #333;
-	padding: 8px 12px;
-	transition: background-color 0.3s;
-}
-
-.navbar a:hover {
-	background-color: #ddd;
-	border-radius: 4px;
-}
-
-

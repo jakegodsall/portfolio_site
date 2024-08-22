@@ -11,6 +11,16 @@
 .hero-content {
     max-width: 600px;
 	line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero_buttons {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .hero h1 {
@@ -18,6 +28,8 @@
 }
 
 .hero p {
+    color: var(--secondary-text);
+    font-weight: 200;
     font-size: 1.2em;
     margin: 0 0 20px;
 }
