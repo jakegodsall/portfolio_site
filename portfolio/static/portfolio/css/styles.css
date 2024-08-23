@@ -268,7 +268,6 @@ table {
 .project-detail_image-container {
   position: relative;
   width: 100%;
-  border-bottom: 3px solid var(--secondary-orange);
 }
 
 .project-detail_image-container img {
@@ -290,10 +289,9 @@ table {
 
 .project-detail_title {
   color: var(--primary-orange);
-  font-weight: 300;
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 10px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: left;
 }
 
 .project-detail_buttons {
@@ -307,26 +305,22 @@ table {
 }
 
 .skills-list {
+  width: 100%;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 1rem;
+  gap: 1rem;
+  padding: 0 1rem 1rem;
 }
 
 .skill-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background-color: inherit;
-  padding: 0.5rem 1rem;
-  border: 2px solid rgb(234, 234, 234);
-  border-radius: 1rem;
+  border-radius: 2rem;
 }
 
 .skill-item img {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
 }
 
 .skill-item p {

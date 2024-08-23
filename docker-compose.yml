@@ -21,11 +21,10 @@ services:
     depends_on:
       - db
     environment:
-      - DEBUG=1
+      - DEBUG=True
       - SECRET_KEY=abcdef
       - ALLOWED_HOSTS=localhost,127.0.0.1
       - DJANGO_SETTINGS_MODULE=portfolio_site.settings.development
-      - DATABASE_URL=postgres://root_user:password@db:5432/portfolio
       - POSTGRES_DB=portfolio
       - POSTGRES_USER=root_user
       - POSTGRES_PASSWORD=password
