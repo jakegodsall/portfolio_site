@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A responsive web application">
     <title>Jake Godsall</title>
-    <link href="{% static 'portfolio/css/styles.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'portfolio/svgs/favicon-black.svg' %}" type="image/svg+xml" />
+    <link rel="icon" href="{% static 'portfolio/svgs/favicon-white.svg' %}" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
 </head>
 <body>
     {% include "portfolio/partials/header/header.html" %}
