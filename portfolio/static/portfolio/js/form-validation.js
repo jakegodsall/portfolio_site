@@ -6,18 +6,18 @@ class FormValidator {
     }
 
     // Static method to validate name input
-    static nameIsValid(name) {
+    static textInputIsValid(name) {
         return (name.value.trim() !== '' && name.value.length < 100);
     }
 
     // Static method to validate email input using a regex pattern
-    static emailIsValid(email) {
+    static emailInputIsValid(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email.value);
     }
 
     // Static method to validate message input
-    static validateMessage(message) {
+    static messageInputIsValid(message) {
         return message.value.trim() !== '';
     }
 }
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Select the form and its input elements
     const form = document.getElementById('contact-form');
     const nameInput = form.querySelector('input[name="name"]');
+    const subjectInput = form.querySelector('input[name="subject"]')
     const emailInput = form.querySelector('input[name="email"]');
     const messageInput = form.querySelector('textarea[name="message"]');
 
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to validate the name input and update the UI accordingly
     function validateAndRenderName() {
         const nameError = document.getElementById('nameError');
-        if (!FormValidator.nameIsValid(nameInput)) {
+        if (!FormValidator.textInputIsValid(nameInput)) {
             nameInput.classList.add('is-invalid');
             nameError.classList.add('active');
             return false;
@@ -56,10 +57,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Function to validate the subject input and update the UI accordingly
+    function validateAndRenderSubject() {
+        const subjectError = document.getElementById('subjectError');
+
+        if (!FormValidator.textInputIsValid(nameInput)) {
+            subjectInput.classList.add('is-invalid');
+            subjectError.classList.add('active');
+            return false;
+        } else {
+            subjectInput.classList.remove('is-invalid');
+            subjectError.classList.remove('active');
+            return true;
+        }
+    }
+
     // Function to validate the email input and update the UI accordingly
     function validateAndRenderEmail() {
         const emailError = document.getElementById('emailError');
-        if (!FormValidator.emailIsValid(emailInput)) {
+        if (!FormValidator.emailInputIsValid(emailInput)) {
             emailInput.classList.add('is-invalid');
             emailError.classList.add('active')
             return false;
@@ -73,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to validate the message input and update the UI accordingly
     function validateAndRenderMessage() {
         const messageError = document.getElementById('messageError');
-        if (!FormValidator.validateMessage(messageInput)) {
+        if (!FormValidator.messageInputIsValid(messageInput)) {
             messageInput.classList.add('is-invalid');
             messageError.classList.add('active');
             return false;
@@ -86,26 +102,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to validate the entire form on submission
     function validateForm(event) {
-        console.log('Validating form input:');
         let isValid = true;
 
         // Perform validation checks
         if (!validateAndRenderName()) isValid = false;
+        if (!validateAndRenderSubject()) isValid = false;
         if (!validateAndRenderEmail()) isValid = false;
         if (!validateAndRenderMessage()) isValid = false;
 
         // If the form is not valid, prevent submission
         if (!isValid) {
             event.preventDefault(); // Stops the form from submitting if validation fails
-            console.log('Form input is invalid');
         }
         // If the form is valid, the form will submit naturally, and the CSRF token will be included automatically
-        console.log('Form input is valid')
     }
 
     // Attach event listeners to form elements for validation
     form.addEventListener('submit', validateForm);
     nameInput.addEventListener('input', validateAndRenderName);
+    subjectInput.addEventListener('input', validateAndRenderSubject);
     emailInput.addEventListener('input', validateAndRenderEmail);
     messageInput.addEventListener('input', validateAndRenderMessage);
 });
