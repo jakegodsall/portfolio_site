@@ -1,4 +1,4 @@
-<form id="contact-form" method="post" novalidate>
+<form class="contact-form" id="contact-form" method="post" novalidate>
     {% csrf_token %}
     <div class="contact-form_group">
         {{ contact_form.name.label_tag }}

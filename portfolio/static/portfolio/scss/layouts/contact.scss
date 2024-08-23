@@ -1,10 +1,11 @@
-.contact-form_container {
+.contact-section {
     display: flex;
     flex-direction: column;
     padding: 1rem;
     margin-bottom: 3rem;
 }
 
-.contact-form_title {
+.contact-section_title.title {
+  font-size: 1.6rem;
   margin-bottom: 2rem;
 }

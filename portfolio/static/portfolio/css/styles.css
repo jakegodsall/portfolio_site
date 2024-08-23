@@ -101,24 +101,30 @@ table {
   border: 2px solid var(--primary-orange);
 }
 
-.form {
+.contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 0.4rem;
+  margin-bottom: 3rem;
 }
 
 .contact-form_group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.8rem;
+}
+
+.contact-form_group label {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
 }
 
 .contact-form_group .form-control {
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
   outline: none;
-  border-radius: 0.5rem;
-  border: none;
+  border-radius: 1rem;
+  border: 2px solid var(--primary-grey);
+  background-color: inherit;
 }
 
 #id_message {
@@ -134,7 +140,7 @@ table {
 }
 
 .error-message {
-  color: red;
+  color: var(--primary-orange);
   font-size: 0.9em;
   overflow: hidden;
   height: 0;
@@ -143,11 +149,11 @@ table {
 }
 
 .error-message.active {
-  height: 2rem;
+  height: 2.4rem;
 }
 
 .is-invalid {
-  border-color: red;
+  border-color: var(--primary-orange);
 }
 
 .hamburger {
@@ -369,14 +375,15 @@ table {
   line-height: 1.5;
 }
 
-.contact-form_container {
+.contact-section {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   margin-bottom: 3rem;
 }
 
-.contact-form_title {
+.contact-section_title.title {
+  font-size: 1.6rem;
   margin-bottom: 2rem;
 }
 
