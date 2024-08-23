@@ -23,7 +23,7 @@ services:
     environment:
       - DEBUG=True
       - SECRET_KEY=abcdef
-      - ALLOWED_HOSTS=localhost,127.0.0.1
+      - ALLOWED_HOSTS=localhost,127.0.0.1,192.168.0.113
       - DJANGO_SETTINGS_MODULE=portfolio_site.settings.development
       - POSTGRES_DB=portfolio
       - POSTGRES_USER=root_user

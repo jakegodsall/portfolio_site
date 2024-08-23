@@ -1,28 +1,8 @@
-{% load static %}
+{% extends 'portfolio/base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A responsive web application">
-    <title>Jake Godsall</title>
-    <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}" />
-
-    <!-- Favicons -->
-    <link rel="icon" href="{% static 'portfolio/svgs/favicon-black.svg' %}" type="image/svg+xml" />
-    <link rel="icon" href="{% static 'portfolio/svgs/favicon-white.svg' %}" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
-</head>
-<body>
-    {% include "portfolio/partials/header/header.html" %}
-    <main class="container">
-        {% include "portfolio/partials/hero/hero-section.html" %}
-        {% include "portfolio/partials/skill/skill-section.html" %}
-        {% include "portfolio/partials/project/project-section.html" %}
-        {% include "portfolio/partials/contact/contact-section.html" %}
-    </main>
-    {% include "portfolio/partials/footer/footer.html" %}
-<script src="{% static 'portfolio/js/script.js' %}"></script>
-<script src="{% static 'portfolio/js/form-validation.js' %}"></script>
-</body>
-</html>
+{% block content %}
+{% include "portfolio/partials/hero/hero-section.html" %}
+{% include "portfolio/partials/skill/skill-section.html" %}
+{% include "portfolio/partials/project/project-section.html" %}
+{% include "portfolio/partials/contact/contact-section.html" %}
+{% endblock %}

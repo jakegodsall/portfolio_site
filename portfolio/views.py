@@ -1,6 +1,7 @@
 import os
 
-from django.shortcuts import render
+from django.conf import settings
+from django.shortcuts import render, redirect
 from .models import Project, Skill
 from .forms import ContactForm
 
@@ -15,16 +16,19 @@ def portfolio(request):
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
 
-            print("FORM DATA IS VALID")
+            full_message = f"Name: {name}\nEmail: {email}\n\n{message}"
 
             send_mail(
-                f"Message sent from {name}",
-                message,
+                subject,
+                full_message,
                 email,
-                [os.getenv('CONTACT_EMAIL_ADDRESS')]
+                [settings.RECIPIENT_EMAIL]
             )
+
+            return redirect('confirmation')
         else:
             print("FORM DATA IS NOT VALID")
     else:
@@ -49,3 +53,7 @@ def portfolio(request):
         'projects': projects,
         'contact_form': form
     })
+
+
+def confirmation(request):
+    return render(request, 'portfolio/confirmation.html')
