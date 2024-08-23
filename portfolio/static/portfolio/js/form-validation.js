@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to reset all form inputs on page reload
     function resetForm() {
         if (form) {
-            const inputs = form.querySelectorAll('input, textarea');
+            // inputs not including hidden CSRF token input
+            const inputs = form.querySelectorAll('input:not([name=csrfmiddlewaretoken]), textarea');
             inputs.forEach(input => {
                 input.value = '';
             });
@@ -85,23 +86,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to validate the entire form on submission
     function validateForm(event) {
+        console.log('Validating form input:');
         let isValid = true;
 
-        if (!validateAndRenderName()) {
-            isValid = false;
-        }
+        // Perform validation checks
+        if (!validateAndRenderName()) isValid = false;
+        if (!validateAndRenderEmail()) isValid = false;
+        if (!validateAndRenderMessage()) isValid = false;
 
-        if (!validateAndRenderEmail()) {
-            isValid = false;
-        }
-
-        if (!validateAndRenderMessage()) {
-            isValid = false;
-        }
-
+        // If the form is not valid, prevent submission
         if (!isValid) {
-            event.preventDefault();
+            event.preventDefault(); // Stops the form from submitting if validation fails
+            console.log('Form input is invalid');
         }
+        // If the form is valid, the form will submit naturally, and the CSRF token will be included automatically
+        console.log('Form input is valid')
     }
 
     // Attach event listeners to form elements for validation
