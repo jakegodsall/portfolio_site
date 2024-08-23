@@ -19,11 +19,13 @@
     {% block extra_head %}{% endblock %}
 </head>
 <body>
-    {% include "portfolio/partials/header/header.html" %}
-    <main class="container">
-        {% block content %} {% endblock %}
-    </main>
-    {% include "portfolio/partials/footer/footer.html" %}
+    <div class="wrapper">
+        {% include "portfolio/partials/header/header.html" %}
+        <main class="container">
+            {% block content %} {% endblock %}
+        </main>
+        {% include "portfolio/partials/footer/footer.html" %}
+    </div>
 <script src="{% static 'portfolio/js/script.js' %}"></script>
 <!--<script src="{% static 'portfolio/js/form-validation.js' %}"></script>-->
 </body>
