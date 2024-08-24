@@ -79,8 +79,8 @@ table {
 :root {
   --primary-text: #fff;
   --secondary-text: #C5C5C5;
-  --primary-orange: #477297;
-  --secondary-orange: #fdc096;
+  --primary-colour: #477297;
+  --secondary-colour: #fdc096;
   --primary-grey: #2A2A2A;
   --background-color: #191919;
 }
@@ -306,7 +306,7 @@ input, select, textarea {
 }
 
 .project-detail_title {
-  color: var(--primary-orange);
+  color: var(--primary-colour);
   font-weight: 500;
   font-size: 1rem;
   text-align: left;
@@ -378,7 +378,7 @@ input, select, textarea {
 }
 
 .aboutme-section_title {
-  color: var(--primary-orange);
+  color: var(--primary-colour);
   font-size: 2rem;
   margin-bottom: 2rem;
 }

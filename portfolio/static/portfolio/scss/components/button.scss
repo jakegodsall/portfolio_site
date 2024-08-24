@@ -1,7 +1,7 @@
 .btn {
     display: inline-block;
     padding: 1rem 1.6rem;
-    background-color: var(--primary-orange);
+    background-color: var(--primary-colour);
     color: var(--background-color);
     text-decoration: none;
     border-radius: 10px;
@@ -11,12 +11,12 @@
 }
 
 .btn:hover {
-    background-color: var(--secondary-orange);
-    color: var(--primary-orange);
+    background-color: var(--secondary-colour);
+    color: var(--primary-colour);
 }
 
 .btn-inverse {
-    color: var(--primary-orange);
+    color: var(--primary-colour);
     background-color: inherit;
-    border: 2px solid var(--primary-orange);
+    border: 2px solid var(--primary-colour);
 }
