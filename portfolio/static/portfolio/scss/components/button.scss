@@ -6,17 +6,21 @@
     text-decoration: none;
     border-radius: 10px;
     font-size: 1em;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s, color 0.3s;
     border: none;
 }
 
 .btn:hover {
-    background-color: var(--secondary-colour);
-    color: var(--primary-colour);
+    letter-spacing: 0.05em;
+}
+
+.btn-inverse:hover {
+    background-color: var(--primary-colour);
+    color: var(--background-color);
 }
 
 .btn-inverse {
     color: var(--primary-colour);
     background-color: inherit;
-    border: 2px solid var(--primary-colour);
+    outline: 2px solid var(--primary-colour);
 }
