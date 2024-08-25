@@ -14,5 +14,11 @@
 
 .confirmation_content {
   text-align: center;
+  line-height: 1.5;
+  font-size: 1.3rem;
   color: var(--secondary-text);
+}
+
+.confirmation_button-div {
+  width: 220px;
 }

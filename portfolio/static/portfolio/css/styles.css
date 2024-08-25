@@ -95,6 +95,8 @@ table {
   font-size: 1em;
   transition: all 0.3s, color 0.3s;
   border: none;
+  width: 100%;
+  text-align: center;
 }
 
 .btn:hover {
@@ -136,6 +138,10 @@ table {
   border-radius: 1rem;
   border: 2px solid var(--primary-grey);
   background-color: inherit;
+}
+
+.contact-form button {
+  cursor: pointer;
 }
 
 #id_message {
@@ -405,7 +411,13 @@ input, select, textarea {
 
 .confirmation_content {
   text-align: center;
+  line-height: 1.5;
+  font-size: 1.3rem;
   color: var(--secondary-text);
+}
+
+.confirmation_button-div {
+  width: 220px;
 }
 
 .contact-section {
