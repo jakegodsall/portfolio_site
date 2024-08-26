@@ -3,10 +3,20 @@
   color: var(--black);
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-grey);
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  max-width: 1600px;
+  background-color: var(--background-color);
 }
 
 .container {
@@ -50,7 +60,6 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
-  background-color: var(--background-color);
   scroll-behavior: smooth;
 }
 
@@ -278,6 +287,15 @@ input, select, textarea {
   color: var(--primary-colour);
 }
 
+@media screen and (min-width: 900px) {
+  .navbar {
+    font-size: 1.2rem;
+  }
+  .navbar ul {
+    gap: 4rem;
+    justify-content: flex-end;
+  }
+}
 .project-detail {
   display: flex;
   flex-direction: column;
@@ -298,8 +316,8 @@ input, select, textarea {
 
 .project-detail_image-container img {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 435px;
+  height: 250px;
   display: block;
   object-fit: cover;
   z-index: 10;
@@ -341,7 +359,6 @@ input, select, textarea {
 .skill-item {
   display: flex;
   align-items: center;
-  border-radius: 2rem;
 }
 
 .skill-item img {
@@ -433,6 +450,11 @@ input, select, textarea {
   margin-bottom: 2rem;
 }
 
+@media screen and (min-width: 680px) {
+  .contact-section {
+    max-width: 630px;
+  }
+}
 .footer {
   display: flex;
   flex-direction: column;
@@ -480,6 +502,19 @@ input, select, textarea {
   margin: 0 0 20px;
 }
 
+@media screen and (min-width: 900px) {
+  .hero-content > h1 {
+    font-size: 3rem;
+  }
+  .hero-content > p {
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+  }
+  .hero_buttons {
+    flex-direction: row;
+    width: 80%;
+  }
+}
 .project-section {
   display: flex;
   width: 100%;
@@ -503,6 +538,29 @@ input, select, textarea {
   color: var(--secondary-text);
 }
 
+.project-section_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 800px) {
+  .project-section_list {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem 2rem;
+  }
+  .project-section_list > li {
+    display: flex;
+    flex: 1 1 200px;
+    width: 45%;
+    max-width: 400px;
+  }
+}
 .skills-section {
   display: flex;
   flex-direction: column;
@@ -536,6 +594,11 @@ input, select, textarea {
   row-gap: 3rem;
 }
 
+@media screen and (min-width: 650px) {
+  .skills-section {
+    max-width: 630px;
+  }
+}
 .box-shadow {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }

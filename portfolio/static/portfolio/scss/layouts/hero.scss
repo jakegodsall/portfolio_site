@@ -34,3 +34,19 @@
     margin: 0 0 20px;
 }
 
+@media screen and (min-width: 900px) {
+    .hero-content > h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content > p {
+        font-size: 1.3rem;
+        margin-bottom: 4rem;
+    }
+
+    .hero_buttons {
+        flex-direction: row;
+        width: 80%;
+    }
+}
+
