@@ -3,9 +3,25 @@
 	flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     text-align: center;
     padding: 0 20px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+                linear-gradient(225deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+                linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+                linear-gradient(315deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    z-index: 0; /* Ensure it stays behind the content */
 }
 
 .hero-content {
@@ -14,6 +30,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
+
 }
 
 .hero_buttons {
@@ -25,6 +43,7 @@
 
 .hero h1 {
     margin: 0 0 20px;
+    font-weight: bold;
 }
 
 .hero p {
