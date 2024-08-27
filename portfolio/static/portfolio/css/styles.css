@@ -251,7 +251,10 @@ input, select, textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 1.6rem;
+  padding: 1rem 1.6rem;
+  border: 1px solid var(--secondary-blue);
+  background-color: var(--secondary-dark-blue);
+  border-radius: 0.6rem;
 }
 
 .navbar ul {
@@ -274,7 +277,7 @@ input, select, textarea {
 
 .navbar a:hover {
   border-radius: 4px;
-  color: var(--primary-colour);
+  color: var(--primary-blue);
 }
 
 @media screen and (min-width: 900px) {
