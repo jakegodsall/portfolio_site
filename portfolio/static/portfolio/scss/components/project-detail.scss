@@ -6,7 +6,6 @@
 	max-width: 450px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
     border-radius: 20px;
 
 	padding: 1rem;
@@ -46,6 +45,15 @@
 	display: flex;
 	align-items: center;
 	gap: 1rem;
+}
+
+.icon {
+    fill: var(--primary-blue);
+    transition: fill 0.3s ease; /* Smooth transition */
+}
+
+.icon:hover {
+    fill: var(--primary-text);
 }
 
 .project-detail_description {

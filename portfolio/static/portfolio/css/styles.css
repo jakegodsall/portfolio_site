@@ -88,7 +88,7 @@ table {
 :root {
   --primary-text: #fff;
   --secondary-text: #C5C5C5;
-  --primary-blue: #343d6c;
+  --primary-blue: #4d5eac;
   --secondary-blue: #272c50;
   --primary-grey: #2A2A2A;
   --primary-dark-blue: #161A31;
@@ -298,7 +298,6 @@ input, select, textarea {
   max-width: 450px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
   border-radius: 20px;
   padding: 1rem;
   border: 1px solid var(--secondary-blue);
@@ -336,6 +335,15 @@ input, select, textarea {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.icon {
+  fill: var(--primary-blue);
+  transition: fill 0.3s ease; /* Smooth transition */
+}
+
+.icon:hover {
+  fill: var(--primary-text);
 }
 
 .project-detail_description {
@@ -382,6 +390,10 @@ input, select, textarea {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  align-self: center;
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--secondary-blue);
 }
 
 .aboutme-section {
@@ -436,10 +448,10 @@ input, select, textarea {
   flex-direction: column;
   padding: 1rem;
   margin-bottom: 3rem;
-  width: 90%;
+  width: 100%;
 }
 
-.contact-section_title.title {
+.contact-section_title {
   font-size: 1.6rem;
   margin-bottom: 2rem;
 }
@@ -523,7 +535,7 @@ input, select, textarea {
   align-items: center;
   text-align: center;
   border-radius: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 8rem;
   background-color: var(--secondary-dark-blue);
 }
 
@@ -546,7 +558,7 @@ input, select, textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.6rem;
   margin-inline: 0.4rem;
 }
 
