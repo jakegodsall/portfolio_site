@@ -465,9 +465,9 @@ input, select, textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   text-align: center;
   padding: 0 20px;
+  height: 80vh;
   background-image: linear-gradient(to bottom, rgb(3, 9, 21) 0%, rgb(2, 18, 67) 20%, transparent 80%);
   background-size: cover;
   background-repeat: no-repeat;
@@ -577,25 +577,34 @@ input, select, textarea {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: var(--primary-grey);
+  background-color: var(--secondary-dark-blue);
+  border: 1px solid var(--secondary-blue);
   padding: 2rem;
+  margin: 0 0.4rem 3rem;
   border-radius: 1rem;
-  margin-bottom: 3rem;
   z-index: 1;
+  background: linear-gradient(to bottom, rgb(3, 9, 21) 0%, rgb(2, 18, 67) 40%, transparent 90%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.skills-section_title.title {
+.skills-section_title {
   font-size: 1.6rem;
   margin-bottom: 2rem;
 }
 
 .skills-section_content {
-  color: var(--secondary-text);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 2rem;
   line-height: 1.5;
+}
+
+.skills-section_content > p {
+  color: var(--secondary-text);
+  font-weight: 300;
 }
 
 .skills-section_skill-list {
