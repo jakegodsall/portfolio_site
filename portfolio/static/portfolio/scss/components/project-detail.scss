@@ -16,15 +16,15 @@
 
 
 .project-detail_image-container {
-    position: relative;
 	width: 100%;
+	border-radius: 0.8rem;
+	overflow: hidden;
 }
 
 .project-detail_image-container img {
-    position: relative;
     display: block;
 	object-fit: cover;
-	z-index: 10;
+	width: 100%;
 }
 
 .project-detail_content {
@@ -32,13 +32,13 @@
 	align-items: center;
   	display: flex;
   	justify-content: space-between;
-	padding: 1rem;
+	margin: 1rem 0 0.4rem;
 }
 
 .project-detail_title {
     color: var(--primary-colour);
-    font-weight: 500;
-	font-size: 1rem;
+    font-weight: 600;
+	font-size: 1.3em;
 	text-align: left;
 }
 
@@ -48,21 +48,24 @@
 	gap: 1rem;
 }
 
+.project-detail_description {
+	color: var(--secondary-text);
+	align-self: flex-start;
+	text-align: left;
+	font-weight: 200;
+	line-height: 1.2;
+	margin-bottom: 1rem;
+}
+
 .project-detail_skills-section {
-	padding: 2rem 1rem;
 }
 
 .skills-list {
 	width: 100%;
 	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 1rem;
-	padding: 0 1rem 1rem;
-}
-
-.skill-item {
-	display: flex;
-	align-items: center;
 }
 
 .skill-item img {

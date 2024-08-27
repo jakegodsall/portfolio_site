@@ -27,18 +27,17 @@
             </a>
         </div>
     </div>
+    <p class="project-detail_description">{{ project.description }}</p>
      <!-- Skills section -->
     <ul class="skills-list">
         {% for skill in project.skills.all %}
         <li>
-            <div class="skill-item">
-                <img
-                    src="{{ skill.svg_icon.url }}"
-                    alt="{{ skill.name }}"
-                    width="20"
-                    height="20"
-                />
-            </div>
+            <img
+                src="{{ skill.svg_icon.url }}"
+                alt="{{ skill.name }}"
+                width="20"
+                height="20"
+            />
         </li>
         {% endfor %}
     </ul>
