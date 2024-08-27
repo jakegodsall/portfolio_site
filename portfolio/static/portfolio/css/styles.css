@@ -93,6 +93,7 @@ table {
   --primary-grey: #2A2A2A;
   --primary-dark-blue: #161A31;
   --secondary-dark-blue: #030915;
+  --error: #c60f0f ;
 }
 
 .btn {
@@ -135,7 +136,7 @@ table {
   padding: 0.7rem 1rem;
   outline: none;
   border-radius: 1rem;
-  border: 2px solid var(--primary-grey);
+  border: 2px solid var(--secondary-blue);
   background-color: inherit;
 }
 
@@ -156,7 +157,7 @@ table {
 }
 
 .error-message {
-  color: var(--primary-colour);
+  color: var(--error);
   font-size: 0.9em;
   line-height: 1.3;
   overflow: hidden;
