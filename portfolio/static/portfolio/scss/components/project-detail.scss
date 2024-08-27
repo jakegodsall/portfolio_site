@@ -7,8 +7,11 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
-    background-color: var(--primary-grey);
     border-radius: 20px;
+
+	padding: 1rem;
+	border: 1px solid var(--secondary-blue);
+    background-color: var(--secondary-dark-blue);
 }
 
 
@@ -19,8 +22,6 @@
 
 .project-detail_image-container img {
     position: relative;
-	width: 435px;
-	height: 250px;
     display: block;
 	object-fit: cover;
 	z-index: 10;
