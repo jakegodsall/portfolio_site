@@ -8,14 +8,16 @@ def main():
     """Run administrative tasks."""
 
     # Determine the environment
-    environment = os.getenv('DJANGO_ENV', 'development')
+    env = os.getenv('DJANGO_ENV', 'development')  # Default to development
     # Set the settings module
 
-    if environment == 'production':
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_site.settings.production')
+    if env == 'development':
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings.development')
+    elif env == 'production':
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings.production')
     else:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_site.settings.development')
-    print(f"DJANGO_SETTINGS_MODULE is set to: {os.environ.get('DJANGO_SETTINGS_MODULE')}")
+        raise ValueError(f"Unknown DJANGO_ENV: {env}")
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
