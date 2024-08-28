@@ -1,4 +1,5 @@
 .navbar {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,13 +32,19 @@
   color: var(--primary-blue);
 }
 
+@media screen and (min-width: 600px) {
+  .navbar {
+    max-width: 630px;
+  }
+}
+
 @media screen and (min-width: 900px) {
   .navbar {
     font-size: 1.2rem;
+
   }
 
   .navbar ul {
     gap: 4rem;
-    justify-content: flex-end;
   }
 }

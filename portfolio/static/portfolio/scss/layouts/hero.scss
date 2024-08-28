@@ -6,6 +6,8 @@
     text-align: center;
     padding: 0 20px;
     height: 80vh;
+    max-height: 1000px;
+    width: 100%;
 
     background-image:
         linear-gradient(to bottom, rgb(3, 9, 21) 0%, rgb(2, 18, 67) 20%, transparent 80%);
@@ -25,6 +27,7 @@
 
 .hero_buttons {
     width: 70%;
+    max-width: 250px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -42,6 +45,13 @@
     font-weight: 200;
     font-size: 1.2em;
     margin: 0 0 20px;
+}
+
+@media screen and (min-width: 640px) {
+    .hero_buttons {
+        flex-direction: row;
+        max-width: none;
+    }
 }
 
 @media screen and (min-width: 900px) {
