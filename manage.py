@@ -10,7 +10,6 @@ def main():
     # Determine the environment
     env = os.getenv('DJANGO_ENV', 'development')  # Default to development
     # Set the settings module
-
     if env == 'development':
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_site.settings.development')
     elif env == 'production':

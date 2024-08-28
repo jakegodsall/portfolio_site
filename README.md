@@ -31,7 +31,7 @@ The app leverages a many-to-many relationship between skills and projects, allow
 - Docker & Docker Compose
 - PostgreSQL
 
-### Installation
+### Development
 
 1. Clone the repository
    ```shell
@@ -54,6 +54,52 @@ The app leverages a many-to-many relationship between skills and projects, allow
    docker-compose exec web python manage.py load_project_data.py
    ```
 6. Access the application at `http://localhost:8000`.
+
+### Deployment
+
+This section explains how to deploy using [Heroku](https://heroku.com), including adding a PostgreSQL addon, and general configuration.
+
+1. Create a new Heroku app.
+    ```shell
+    heroku create portfolio_site
+    ```
+2. Add the PostgreSQL addon.
+   ```shell
+   heroku addons:create heroku-postgresql:ession-0
+   ```
+3. Configure the environment variables
+    ```shell
+    heroku config:set DJANGO_ENV=production
+    ```
+   Note that this `DJANGO_ENV` environment variable is used to choose the appropriate settings file:
+   ```python
+   # manage.py
+   
+   # Determine the environment
+   env = os.getenv('DJANGO_ENV', 'development')  # Default to development
+   # Set the settings module
+   if env == 'development':
+      os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_site.settings.development')
+   elif env == 'production':
+      os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_site.settings.production')
+   else:
+      raise ValueError(f"Unknown DJANGO_ENV: {env}")
+   ```
+   You may also need to set other environment variables such as `SECRET_KEY`, `ALLOWED_HOSTS`, etc., according to your project’s needs:
+   ```shell
+   heroku config:set SECRET_KEY=your-secret-key
+   heroku config:set ALLOWED_HOSTS=your-app-name.herokuapp.com
+   ```
+4. Create a `Procfile` in the root of the project (already included in this repository)
+   ```shell
+   web: gunicorn portfolio_site.wsgi --log-file -
+   ```
+5. Deploy the application
+   ```shell
+   git add .
+   git commit -m "Deploying to Heroku"
+   git push heroku main
+   ```
 
 ## License
 
