@@ -10,4 +10,4 @@ DATABASES = {
     )
 }
 
-ALLOWED_HOSTS = ['https://jakegodsall-portfolio-cf8c4e9d835b.herokuapp.com/']
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS")
