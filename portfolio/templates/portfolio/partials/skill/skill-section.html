@@ -6,7 +6,9 @@
     </div>
     <ul class="skills-section_skill-list">
         {% for skill in skills %}
-            {% include "portfolio/partials/skill/skill-detail.html" %}
+            {% if skill.is_for_skills_section %}
+                {% include "portfolio/partials/skill/skill-detail.html" %}
+            {% endif %}
         {% endfor %}
     </ul>
 </section>
