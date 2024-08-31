@@ -15,17 +15,18 @@ def portfolio(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
+            user_email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
 
-            full_message = f"Name: {name}\nEmail: {email}\n\n{message}"
+            full_message = f"Name: {name}\nEmail: {user_email}\n\n{message}"
 
             send_mail(
                 subject,
                 full_message,
-                email,
-                [settings.RECIPIENT_EMAIL]
+                user_email,
+                [settings.RECIPIENT_EMAIL],
+                fail_silently=False
             )
 
             return redirect('confirmation')
