@@ -611,11 +611,6 @@ input, select, textarea {
     max-width: 400px;
   }
 }
-@media screen and (min-width: 1200px) {
-  .project-section_list > li {
-    width: 48%;
-  }
-}
 .skills-section {
   display: flex;
   flex-direction: column;
