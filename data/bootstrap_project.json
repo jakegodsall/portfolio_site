@@ -1,8 +1,8 @@
 [
     {
         "name": "AI Chatbot",
-        "description": "A chatbot that uses AI to answer questions.",
-        "detailed_description": "This project involves building an AI chatbot using natural language processing and machine learning techniques. The bot can answer questions, provide recommendations, and engage in small talk.",
+        "description": "An advanced AI-driven chatbot designed to answer a variety of user questions, handle natural language inputs, and offer intelligent responses. It also features personalized recommendations and dynamic conversation capabilities, making interactions feel more natural and helpful.",
+        "detailed_description": "This project involves developing an advanced AI chatbot capable of interpreting and responding to a wide range of questions through natural language processing (NLP). It integrates deep learning models to analyze user input and provide relevant answers. The chatbot also incorporates additional features such as personalized recommendations based on user preferences and the ability to hold longer conversations on multiple topics, ensuring that users can have a more engaging and interactive experience. The backend uses scalable cloud services, and the frontend provides a user-friendly chat interface.",
         "start_date": "2023-01-01",
         "end_date": "2023-06-01",
         "live_site_url": "https://example.com/ai-chatbot",
@@ -14,8 +14,8 @@
     },
     {
         "name": "E-commerce Website",
-        "description": "An online store for various products.",
-        "detailed_description": "This project is an e-commerce website that allows users to browse and purchase products online. Features include a product catalog, shopping cart, and checkout process.",
+        "description": "A fully functional e-commerce platform built for online retail, offering users the ability to browse a wide selection of products. It includes features such as a product catalog, shopping cart, secure payment integration, and a seamless checkout experience.",
+        "detailed_description": "This project is an e-commerce website that allows users to browse and purchase products online. Features include a product catalog, shopping cart, and checkout process. The system was designed with scalability in mind, allowing for the easy addition of new product categories, payment gateways, and inventory management systems. Security features such as SSL encryption and user authentication are also integrated to protect sensitive information and enhance user trust.",
         "start_date": "2022-05-15",
         "end_date": "2022-11-20",
         "live_site_url": "https://example.com/ecommerce-website",
@@ -27,8 +27,8 @@
     },
     {
         "name": "Mobile App",
-        "description": "A mobile application for task management.",
-        "detailed_description": "This project is a mobile app designed to help users manage their tasks efficiently. It includes features like task creation, reminders, and progress tracking.",
+        "description": "A cross-platform mobile application that helps users manage their daily tasks, set reminders, and track progress. The intuitive user interface makes it easy to add, organize, and complete tasks on the go.",
+        "detailed_description": "This project is a mobile app designed to help users manage their tasks efficiently. It includes features like task creation, reminders, and progress tracking. The app was built to function seamlessly on both iOS and Android devices, using React Native for cross-platform development. With a focus on usability, the app supports drag-and-drop task reordering, and its clean, minimalist design ensures a distraction-free experience for users.",
         "start_date": "2021-09-10",
         "end_date": "2022-02-28",
         "live_site_url": "https://example.com/mobile-app",

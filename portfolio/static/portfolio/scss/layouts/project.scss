@@ -1,6 +1,6 @@
 .project-section {
-	display: flex;
 	width: 100%;
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
@@ -38,6 +38,12 @@
 }
 
 @media screen and (min-width: 680px) {
+	.project-section {
+		max-width: 700px;
+		align-items: flex-start;
+		text-align: left;
+	}
+
 	.project-section_title {
 		font-size: 3rem;
 		font-weight: bold;
@@ -45,7 +51,11 @@
 
 	.project-section_content {
 		font-size: 1.2rem;
-		max-width: 600px;
+		max-width: none;
+	}
+
+	.project-section_list {
+		width: 100%;
 	}
 }
 
@@ -59,7 +69,6 @@
 		flex-direction: row;
 		gap: 1rem 2rem;
 
-		max-width: 630px;
 	}
 
 	.project-section_list > li {

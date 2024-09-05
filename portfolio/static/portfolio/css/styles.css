@@ -322,6 +322,10 @@ input, select, textarea {
 
 .project-detail_content {
   width: 100%;
+}
+
+.project-detail_top-bar {
+  width: 100%;
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -379,6 +383,58 @@ input, select, textarea {
 @media screen and (min-width: 680px) {
   .project-detail {
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "text-column image-column";
+    gap: 1rem;
+  }
+  .project-section_list li:nth-child(odd) .project-detail_content {
+    grid-area: text-column;
+  }
+  .project-section_list li:nth-child(even) .project-detail_content {
+    grid-area: image-column;
+  }
+  .project-section_list li:nth-child(odd) .project-detail_image-container {
+    grid-area: image-column;
+  }
+  .project-section_list li:nth-child(even) .project-detail_image-container {
+    grid-area: text-column;
+  }
+  .project-detail_content {
+    align-self: start;
+    max-height: 180px;
+    padding-right: 1rem;
+  }
+  .project-detail_top-bar {
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+  .project-detail_image-container {
+    aspect-ratio: 2/1;
+  }
+  .project-detail_image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .project-detail_content {
+    overflow-y: scroll; /* Ensure scrolling is enabled if needed */
+  }
+  .project-detail_content::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  .project-detail_content::-webkit-scrollbar-track {
+    border-radius: 100px;
+    background: var(--primary-dark-blue); /* Background of the scrollbar track */
+  }
+  .project-detail_content::-webkit-scrollbar-thumb {
+    background: var(--primary-blue); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+  }
+  .project-detail_content::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color when hovered */
   }
 }
 .skill-detail {
@@ -584,8 +640,8 @@ input, select, textarea {
   }
 }
 .project-section {
-  display: flex;
   width: 100%;
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -622,13 +678,21 @@ input, select, textarea {
 }
 
 @media screen and (min-width: 680px) {
+  .project-section {
+    max-width: 700px;
+    align-items: flex-start;
+    text-align: left;
+  }
   .project-section_title {
     font-size: 3rem;
     font-weight: bold;
   }
   .project-section_content {
     font-size: 1.2rem;
-    max-width: 600px;
+    max-width: none;
+  }
+  .project-section_list {
+    width: 100%;
   }
 }
 @media screen and (min-width: 800px) {
@@ -639,7 +703,6 @@ input, select, textarea {
     flex-wrap: wrap;
     flex-direction: row;
     gap: 1rem 2rem;
-    max-width: 630px;
   }
   .project-section_list > li {
     display: flex;
