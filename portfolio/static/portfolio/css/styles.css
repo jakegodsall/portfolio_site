@@ -284,7 +284,7 @@ input, select, textarea {
 
 @media screen and (min-width: 600px) {
   .navbar {
-    max-width: 630px;
+    max-width: 368px;
   }
 }
 @media screen and (min-width: 900px) {
@@ -300,7 +300,6 @@ input, select, textarea {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 450px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -485,6 +484,11 @@ input, select, textarea {
   padding: 2rem;
 }
 
+@media screen and (min-width: 600px) {
+  .header {
+    padding-top: 3.6rem;
+  }
+}
 .hero {
   display: flex;
   flex-direction: column;
@@ -509,6 +513,19 @@ input, select, textarea {
   z-index: 1;
 }
 
+.hero_title {
+  margin: 0 0 20px;
+  font-weight: bold;
+  font-size: 2.6rem;
+}
+
+.hero_description {
+  color: var(--secondary-text);
+  font-weight: 200;
+  font-size: 1.2em;
+  margin-bottom: 1.6rem;
+}
+
 .hero_buttons {
   width: 70%;
   max-width: 250px;
@@ -517,20 +534,23 @@ input, select, textarea {
   gap: 2rem;
 }
 
-.hero_title {
-  margin: 0 0 20px;
-  font-weight: bold;
-  font-size: 2.6rem;
-}
-
-.hero p {
-  color: var(--secondary-text);
-  font-weight: 200;
-  font-size: 1.2em;
-  margin: 0 0 20px;
-}
-
 @media screen and (min-width: 640px) {
+  .hero {
+    height: auto;
+    justify-content: flex-start;
+    padding-top: 16rem;
+    padding-bottom: 6rem;
+  }
+  .hero_content {
+    max-width: 700px;
+  }
+  .hero_title {
+    font-size: 3.6rem;
+  }
+  .hero_description {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+  }
   .hero_buttons {
     flex-direction: row;
     max-width: none;
@@ -588,7 +608,7 @@ input, select, textarea {
 }
 
 @media screen and (min-width: 680px) {
-  .project-section_title.title {
+  .project-section_title {
     font-size: 3rem;
     font-weight: bold;
   }
@@ -605,10 +625,10 @@ input, select, textarea {
     flex-wrap: wrap;
     flex-direction: row;
     gap: 1rem 2rem;
+    max-width: 630px;
   }
   .project-section_list > li {
     display: flex;
-    max-width: 400px;
   }
 }
 .skills-section {

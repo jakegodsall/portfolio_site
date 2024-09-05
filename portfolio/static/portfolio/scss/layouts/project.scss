@@ -38,7 +38,7 @@
 }
 
 @media screen and (min-width: 680px) {
-	.project-section_title.title {
+	.project-section_title {
 		font-size: 3rem;
 		font-weight: bold;
 	}
@@ -59,11 +59,11 @@
 		flex-direction: row;
 		gap: 1rem 2rem;
 
+		max-width: 630px;
 	}
 
 	.project-section_list > li {
 		display: flex;
-		max-width: 400px;
 	}
 }
 
