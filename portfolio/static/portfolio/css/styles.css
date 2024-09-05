@@ -133,6 +133,7 @@ table {
 }
 
 .contact-form_group .form-control {
+  width: 100%;
   padding: 0.7rem 1rem;
   outline: none;
   border-radius: 1rem;
@@ -524,6 +525,7 @@ input, select, textarea {
 
 .contact-section {
   display: flex;
+  align-items: center;
   flex-direction: column;
   padding: 1rem;
   margin-bottom: 3rem;
@@ -531,7 +533,7 @@ input, select, textarea {
 }
 
 .contact-section_title {
-  font-size: 1.6rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
 }
 
