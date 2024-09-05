@@ -388,12 +388,26 @@ input, select, textarea {
   gap: 1.25rem;
 }
 
+.skill-detail_svg {
+  width: 50px;
+  height: 50px;
+}
+
 .skill-detail_name {
   font-size: 1.1rem;
   font-weight: 500;
   text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.05);
 }
 
+@media screen and (min-width: 600px) {
+  .skill-detail_svg {
+    width: 30px;
+    height: 30px;
+  }
+  .skill-detail_name {
+    font-size: 0.8rem;
+  }
+}
 .socials-bar {
   display: flex;
   justify-content: center;
@@ -651,17 +665,16 @@ input, select, textarea {
   margin-bottom: 2rem;
 }
 
-.skills-section_content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.skills-section_description {
   margin-bottom: 2rem;
+  font-weight: 200;
   line-height: 1.5;
+  font-size: 1rem;
+  color: var(--secondary-text);
 }
 
-.skills-section_content > p {
-  color: var(--secondary-text);
-  font-weight: 300;
+.skills-section_description:last-of-type {
+  margin-bottom: 4.2rem;
 }
 
 .skills-section_skill-list {
@@ -674,8 +687,36 @@ input, select, textarea {
 
 @media screen and (min-width: 650px) {
   .skills-section {
-    max-width: 630px;
+    max-width: 700px;
     margin: 2rem 2rem 8rem;
+    text-align: left;
+    display: grid;
+    row-gap: 1.6rem;
+    column-gap: 4rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "item1 item2" "item4 item3";
+  }
+  .skills-section_title {
+    grid-area: item1;
+    margin-bottom: 0;
+    font-size: 2.6rem;
+  }
+  .skills-section_description:first-of-type {
+    grid-area: item4;
+    align-self: start;
+  }
+  .skills-section_description:last-of-type {
+    grid-area: item2;
+    margin-bottom: 0;
+    align-self: end;
+  }
+  .skills-section_skill-list {
+    grid-area: item3;
+    align-self: start;
+    column-gap: 0.8rem;
+    row-gap: 1rem;
+    justify-content: flex-start;
   }
   .skills-section_content {
     font-size: 1.2rem;
