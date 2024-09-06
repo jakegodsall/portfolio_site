@@ -118,6 +118,8 @@
 		align-self: start;
 		max-height: 180px;
 		padding-right: 1rem;
+		overflow-y: auto;
+		font-size: 18px;
 	}
 
 	.project-detail_top-bar {
@@ -136,10 +138,6 @@
 		width: 100%;
 		height: auto;
 		object-fit: cover;
-	}
-
-	.project-detail_content {
-		overflow-y: auto;
 	}
 
 	.project-detail_content::-webkit-scrollbar {

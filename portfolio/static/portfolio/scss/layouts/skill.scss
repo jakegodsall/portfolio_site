@@ -43,12 +43,13 @@
 @media screen and (min-width: 650px) {
 	.skills-section {
 		max-width: 700px;
-		margin: 2rem 2rem 8rem;
+		margin-top: 2rem;
+		margin-bottom: 8rem;
 		text-align: left;
 
 		display: grid;
 		row-gap: 1.6rem;
-		column-gap: 4rem;
+		column-gap: 2rem;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto 1fr;
 		grid-template-areas:
@@ -59,18 +60,23 @@
 	.skills-section_title {
 		grid-area: item1;
 		margin-bottom: 0;
-		font-size: 2.6rem;
+		font-size: 36px;
+	}
+
+	.skills-section_description {
+		font-size: 18px;
 	}
 
 	.skills-section_description:first-of-type {
 		grid-area: item4;
 		align-self: start;
+		margin-bottom: 0;
 	}
 
 	.skills-section_description:last-of-type {
 		grid-area: item2;
-		margin-bottom: 0;
 		align-self: end;
+		margin-bottom: 0;
 	}
 
 	.skills-section_skill-list {
@@ -82,6 +88,5 @@
 	}
 
 	.skills-section_content {
-		font-size: 1.2rem;
 	}
 }
