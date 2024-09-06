@@ -334,14 +334,6 @@ input, select, textarea {
     max-width: 368px;
   }
 }
-@media screen and (min-width: 900px) {
-  .navbar {
-    font-size: 1.2rem;
-  }
-  .navbar ul {
-    gap: 4rem;
-  }
-}
 .project-detail {
   display: flex;
   flex-direction: column;
