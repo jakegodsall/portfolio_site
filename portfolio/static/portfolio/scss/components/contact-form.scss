@@ -25,6 +25,10 @@
 	background-color: inherit;
 }
 
+.contact-form_group .form-control::placeholder {
+	color: transparent;
+}
+
 .contact-form button {
 	cursor: pointer;
 }
@@ -62,4 +66,51 @@
 // Stop iPhone from zooming when focusing on inputs
 input, select, textarea {
     font-size: 16px;
+}
+
+.contact-form_button-section :last-child {
+	display: none;
+}
+
+@media screen and (min-width: 680px) {
+	.contact-form {
+		flex-direction: row;
+		gap: 1rem;
+		margin-bottom: 0;
+	}
+
+	.contact-form label {
+		display: none;
+	}
+
+	.contact-form_group .form-control::placeholder {
+		color: var(--primary-blue);
+	}
+
+	.contact-form_col1,
+	.contact-form_col2 {
+		flex: 1;
+	}
+
+	.contact-form_group #id_message {
+		height: 100px;
+	}
+
+	.contact-form_button-section {
+		display: flex;
+		gap: 1rem;
+		flex-direction: row;
+	}
+
+	.contact-form_button-section :first-child {
+		flex: 1;
+	}
+
+	.contact-form_button-section :last-child {
+		flex: 2;
+	}
+
+	.contact-form_button-section :last-child {
+		display: flex;
+	}
 }
