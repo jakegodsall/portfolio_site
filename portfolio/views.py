@@ -56,5 +56,10 @@ def portfolio(request):
     })
 
 
+def about(request):
+    if request.method == 'GET':
+        return render(request, 'portfolio/about.html')
+
+
 def confirmation(request):
     return render(request, 'portfolio/confirmation.html')
