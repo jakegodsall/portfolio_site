@@ -7,6 +7,7 @@ It includes a dedicated section for listing skills and projects, where users can
 The app leverages a many-to-many relationship between skills and projects, allowing for flexible representation of how your expertise applies to different projects. Additionally, the application includes a contact form with responsive frontend validation as well as robust backend validation to ensure secure and effective communication.
 
 ## Features
+
 - Two Django models: Skill and Project.
   - Many-to-many relationship between Skill and Project.
   - Separate sections for displaying skills and projects.
@@ -22,6 +23,8 @@ The app leverages a many-to-many relationship between skills and projects, allow
 - Management Commands:
   - Custom Django management commands are provided to populate the Skill and Project tables with dummy data.
   - Important: The Skill table must be populated before the Project table due to the many-to-many relationship.
+- Figma Design File:
+  - An associated Figma design file for the portfolio can be found [here](https://www.figma.com/design/wAgHnJwJZTAkGQbZA0EMc8/Portfolio-Site-v1?node-id=0-1&t=hJVMgzQHP8SZCOP7-1).
 
 ## Getting Started
 
@@ -53,7 +56,12 @@ The app leverages a many-to-many relationship between skills and projects, allow
    docker-compose exec web python manage.py load_skill_data.py
    docker-compose exec web python manage.py load_project_data.py
    ```
-6. Access the application at `http://localhost:8000`.
+6. Set up npm to watch the changes in the Sass stylesheets:
+   ```shell
+   npm install
+   npm run sass
+   ```
+7. Access the application at `http://localhost:8000`.
 
 ### Deployment
 
