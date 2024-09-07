@@ -4,9 +4,7 @@
     <p class="skills-section_description">The tools that bring my ideas to life:</p>
     <ul class="skills-section_skill-list">
         {% for skill in skills %}
-            {% if skill.is_for_skills_section %}
-                {% include "portfolio/partials/skill/skill-detail.html" %}
-            {% endif %}
+            {% include "portfolio/partials/skill/skill-detail.html" %}
         {% endfor %}
     </ul>
 </section>

@@ -37,16 +37,9 @@ def portfolio(request):
 
     # GET REQUESTS
 
-    # Get the skill ID from the query parameters for filtering projects
-    skill_id = request.GET.get('skill')
-    # Filter projects by the selected skill if provided, otherwise get all projects
-    if skill_id:
-        projects = Project.objects.filter(skills__id=skill_id)
-    else:
-        projects = Project.objects.all()
-
     # Get all skills to display in skills section
-    skills = Skill.objects.all()
+    skills = Skill.objects.filter(is_for_skills_section=True)[:10]
+    projects = Project.objects.all()
 
     # Render the portfolio page with projects, skills, and the contact form
     return render(request, 'portfolio/index.html', {
