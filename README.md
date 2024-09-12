@@ -73,7 +73,7 @@ This section explains how to deploy using [Heroku](https://heroku.com), includin
     ```
 2. Add the PostgreSQL addon.
    ```shell
-   heroku addons:create heroku-postgresql:ession-0
+   heroku addons:create heroku-postgresql:essential-0
    ```
 3. Configure the environment variables
     ```shell
