@@ -10,7 +10,7 @@ from django.core.mail import send_mail
 
 # View to handle displaying the portfolio page
 def portfolio(request):
-    # POST REQUEST FOR FORM
+    # POST REQUEST FOR EMAIL FORM
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -28,7 +28,7 @@ def portfolio(request):
                 [settings.RECIPIENT_EMAIL],
                 fail_silently=False
             )
-
+            print("FORM DATA IS VALID")
             return redirect('confirmation')
         else:
             print("FORM DATA IS NOT VALID")

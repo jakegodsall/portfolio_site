@@ -1,4 +1,4 @@
-<form class="contact-form" id="contact-form" method="POST" action="{% url 'portfolio' %}" novalidate>
+<form class="contact-form" id="contact-form" method="POST" action="/">
     {% csrf_token %}
     <div class="contact-form_col1">
         <div class="contact-form_group">
@@ -26,7 +26,6 @@
         </div>
         <div class="contact-form_button-section">
             <button type="submit" class="btn">Submit</button>
-            {% include "portfolio/partials/contact/socials-bar.html" %}
         </div>
     </div>
 </form>
