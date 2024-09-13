@@ -1,28 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jake Godsall's personal software development portfolio.">
-    <title>{% block title %}Jake Godsall{% endblock %}</title>
+{% extends 'base.html' %}
 
-    <!-- Styles -->
-{#    <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}" />#}
-
-    <!-- Favicons -->
-    <link rel="icon" href="{% static 'portfolio/svgs/favicon-black.svg' %}" type="image/svg+xml" />
-    <link rel="icon" href="{% static 'portfolio/svgs/favicon-white.svg' %}" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
-
-    <!-- Extra Head -->
-    {% block extra_head %}{% endblock %}
-</head>
-<body>
-    <div class="wrapper">
-        <main class="container">
-            {% block content %} {% endblock %}
-        <h1>TESTING</h1>
-        </main>
-{#        {% include "portfolio/partials/footer/footer.html" %}#}
+{% block content %}
+    <div class="error">
+        <h1 class="error_title">Oops!</h1>
+        <p class="error_content">The page you're searching for doesn't exist</p>
     </div>
-</body>
-</html>
+    <a class="error_button" href="{% url 'portfolio' %}">Home</a>
+{% endblock %}

@@ -112,9 +112,9 @@ MEDIA_ROOT = os.getenv('MEDIA_ROOT', BASE_DIR / 'mediafiles')
 # Static Files
 
 STATIC_ROOT = os.getenv('STATIC_ROOT', BASE_DIR / 'staticfiles')
-STATIC_URL = 'static/'
+STATIC_URL = 'staticfiles/'
 STATICFILES_DIRS = [
-    BASE_DIR / "portfolio" / "static",
+    BASE_DIR / "portfolio" / "staticfiles",
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
