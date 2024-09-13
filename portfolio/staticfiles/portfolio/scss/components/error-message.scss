@@ -16,13 +16,7 @@
     margin-bottom: 25px;
   }
 
-  &_button {
-    font-size: 14px;
-    font-weight: 600;
-    padding: 8px 36px;
-    border: 1px solid var(--primary-blue);
-    background-color: 0A0F1F;
-    border-radius: 10px;
-    text-decoration: none;
+  &_button-div {
+    max-width: 115px;
   }
 }

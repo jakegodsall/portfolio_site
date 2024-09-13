@@ -240,13 +240,8 @@ input, select, textarea {
   text-align: center;
   margin-bottom: 25px;
 }
-.error_button {
-  font-size: 14px;
-  font-weight: 600;
-  padding: 8px 36px;
-  border: 1px solid var(--primary-blue);
-  background-color: 0A0F1F;
-  border-radius: 10px;
+.error_button-div {
+  max-width: 115px;
 }
 
 .hamburger {

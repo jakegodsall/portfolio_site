@@ -5,5 +5,7 @@
         <h1 class="error_title">Oops!</h1>
         <p class="error_content">The page you're searching for doesn't exist</p>
     </div>
-    <a class="btn" href="{% url 'portfolio' %}">Home</a>
+    <div class="error_button-div">
+        <a class="btn" href="{% url 'portfolio' %}">Home</a>
+    </div>
 {% endblock %}
