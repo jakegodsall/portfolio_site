@@ -2,7 +2,6 @@ import os
 import dj_database_url
 
 from .base import *
-from ..storages import StaticStorage, MediaStorage
 
 
 # AWS S3
@@ -22,11 +21,11 @@ AWS_QUERYSTRING_AUTH = False  # Set this to False if you don't want query string
 # For static files
 AWS_STATIC_LOCATION = 'static'
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_STATIC_LOCATION}/'
-STATICFILES_STORAGE = StaticStorage
+STATICFILES_STORAGE = 'portfolio_site.storages.StaticStorage'
 
 # For media files
 AWS_MEDIA_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = MediaStorage
+DEFAULT_FILE_STORAGE = 'portfolio_site.storages.MediaStorage'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_MEDIA_LOCATION}/'
 
 # Database
