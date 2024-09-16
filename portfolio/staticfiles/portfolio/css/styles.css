@@ -516,6 +516,7 @@ input, select, textarea {
     padding-bottom: 16px;
   }
   .caret-toggle {
+    cursor: pointer;
     transition: all 0.5s ease-in-out;
   }
   .caret-toggle.active {
