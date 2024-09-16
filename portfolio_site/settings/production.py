@@ -19,12 +19,14 @@ AWS_DEFAULT_ACL = None  # Set default ACL to None to avoid public access by defa
 AWS_QUERYSTRING_AUTH = False  # Set this to False if you don't want query string auth for the files
 
 # For static files
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+AWS_STATIC_LOCATION = 'static'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_STATIC_LOCATION}/'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # For media files
+AWS_MEDIA_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_MEDIA_LOCATION}/'
 
 # Database
 
