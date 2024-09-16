@@ -14,11 +14,14 @@ AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
 
-AWS_S3_FILE_OVERWRITE = False  # Avoid overwriting files with the same name
+AWS_S3_FILE_OVERWRITE = True
 AWS_DEFAULT_ACL = None  # Set default ACL to None to avoid public access by default
 AWS_QUERYSTRING_AUTH = False  # Set this to False if you don't want query string auth for the files
 
 # For static files
+STATICFILES_DIRS = [
+    BASE_DIR / "portfolio" / "staticfiles",
+]
 AWS_STATIC_LOCATION = 'static'
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_STATIC_LOCATION}/'
 STATICFILES_STORAGE = 'portfolio_site.storages.StaticStorage'
