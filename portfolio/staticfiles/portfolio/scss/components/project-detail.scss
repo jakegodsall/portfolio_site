@@ -88,6 +88,14 @@
 	font-size: 0.8rem;
 }
 
+.caret-toggle {
+	display: none;
+}
+
+.project-detail_extended-content {
+	display: none;
+}
+
 @media screen and (min-width: 680px) {
 	.project-detail {
 		padding-bottom: 0;
@@ -169,6 +177,7 @@
 	}
 
 	.project-detail_extended-content {
+		display: block;
 		max-height: 0;
 		overflow: hidden;
 		margin-top: 20px;
@@ -186,6 +195,7 @@
 	}
 
 	.caret-toggle {
+		display: block;
 		cursor: pointer;
 		transition: all 0.5s ease-in-out;
 	}
