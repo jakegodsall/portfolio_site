@@ -1,9 +1,7 @@
 const projectDetails = document.querySelectorAll(".project-detail");
-console.log(projectDetails);
 
 projectDetails.forEach(projectDetail => {
    const caretToggle = projectDetail.querySelector("#caret-toggle");
-   console.log(caretToggle);
 
    // Attach event listener to toggle the visibility of the .project-content
     caretToggle.addEventListener('click', () => {
