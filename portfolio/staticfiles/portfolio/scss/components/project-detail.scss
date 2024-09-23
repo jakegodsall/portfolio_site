@@ -212,6 +212,10 @@
 }
 
 @media screen and (min-width: 900px) {
+	.project-detail_extended-content {
+		display: none;
+	}
+
 	.project-detail {
 		align-items: flex-start;
 		padding: 25px;
@@ -221,6 +225,10 @@
 	.project-detail_grid {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.project-detail p {
+		font-size: 22px;
 	}
 
 	.project-detail_image-container {
