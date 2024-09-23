@@ -56,7 +56,23 @@
             </div>
         </div>
         </div>
+
     <p class="project-detail_extended-content">
         {{ project.detailed_description|linebreaksbr }}
     </p>
+    <div class="skill-bar__desktop">
+        <h3>Skills</h3>
+        <ul class="skills-list">
+            {% for skill in project.skills.all %}
+            <li>
+                <img
+                    src="{{ skill.svg_icon.url }}"
+                    alt="{{ skill.name }}"
+                    width="30"
+                    height="30"
+                />
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>

@@ -77,6 +77,10 @@
 	justify-content: space-between;
 }
 
+.skill-bar__desktop {
+	display: none;
+}
+
 .skills-list {
 	display: flex;
 	flex-direction: row;
@@ -92,11 +96,6 @@
 .skill-item p {
 	font-size: 0.8rem;
 }
-
-//.caret-toggle {
-//	display: none;
-//}
-
 
 .project-detail_extended-content {
 	display: block;
@@ -212,3 +211,34 @@
 	}
 }
 
+@media screen and (min-width: 900px) {
+	.project-detail {
+		align-items: flex-start;
+		padding: 25px;
+	}
+
+	.project-detail_grid {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.project-detail_image-container {
+		height: 200px;
+	}
+
+	.skill-bar {
+		display: none;
+	}
+
+	.skill-bar__desktop {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		margin-top: auto;
+	}
+
+	.skill-bar__desktop .skills-list {
+		flex-wrap: nowrap;
+	}
+
+}

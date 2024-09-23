@@ -27,7 +27,11 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex: 1;
-
-
 }
 
+
+@media screen and (min-width: 900px) {
+	.container {
+		padding-inline: 2rem;
+	}
+}

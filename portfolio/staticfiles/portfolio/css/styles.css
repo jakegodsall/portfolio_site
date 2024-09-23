@@ -30,6 +30,11 @@ body {
   flex: 1;
 }
 
+@media screen and (min-width: 900px) {
+  .container {
+    padding-inline: 2rem;
+  }
+}
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -427,6 +432,10 @@ input, select, textarea {
   justify-content: space-between;
 }
 
+.skill-bar__desktop {
+  display: none;
+}
+
 .skills-list {
   display: flex;
   flex-direction: row;
@@ -534,6 +543,31 @@ input, select, textarea {
   }
   .caret-toggle.active {
     transform: rotate(180deg);
+  }
+}
+@media screen and (min-width: 900px) {
+  .project-detail {
+    align-items: flex-start;
+    padding: 25px;
+  }
+  .project-detail_grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-detail_image-container {
+    height: 200px;
+  }
+  .skill-bar {
+    display: none;
+  }
+  .skill-bar__desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: auto;
+  }
+  .skill-bar__desktop .skills-list {
+    flex-wrap: nowrap;
   }
 }
 .skill-detail {
@@ -813,7 +847,19 @@ input, select, textarea {
     width: 100%;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
+  .project-section {
+    width: 100%;
+    max-width: 1200px;
+  }
+  .project-section_title {
+    font-size: 48px;
+    padding-inline: 0;
+  }
+  .project-section_content {
+    font-size: 24px;
+    padding-inline: 0;
+  }
   .project-section_list {
     display: flex;
     align-items: stretch;
@@ -824,6 +870,31 @@ input, select, textarea {
   }
   .project-section_list > li {
     display: flex;
+    width: 30%;
+  }
+  .project-section_list.carousel {
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .button-bar {
+    align-self: center;
+    display: flex;
+    gap: 1rem;
+  }
+  .prev-btn, .next-btn {
+    background-color: inherit;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    border: 2px solid var(--secondary-blue);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  .prev-btn:hover, .next-btn:hover {
+    border: 2px solid var(--primary-blue);
+  }
+  .prev-btn:active, .next-btn:active {
+    transform: translateY(5px);
   }
 }
 .skills-section {
@@ -910,6 +981,7 @@ input, select, textarea {
     background: none;
     border: none;
     max-width: 1200px;
+    padding-inline: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
