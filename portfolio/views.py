@@ -38,7 +38,7 @@ def portfolio(request):
     # GET REQUESTS
 
     # Get all skills to display in skills section
-    skills = Skill.objects.filter(is_for_skills_section=True)[:10]
+    skills = Skill.objects.filter(is_for_skills_section=True)[:9]
     projects = Project.objects.all()
 
     # Render the portfolio page with projects, skills, and the contact form
