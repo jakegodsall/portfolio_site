@@ -26,3 +26,10 @@
 		font-size: 0.8rem;
 	}
 }
+
+@media screen and (min-width: 950px) {
+	.skill-detail_svg {
+		width: 75px;
+		height: 75px;
+	}
+}

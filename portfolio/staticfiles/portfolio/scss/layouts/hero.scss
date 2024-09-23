@@ -75,12 +75,16 @@
 }
 
 @media screen and (min-width: 900px) {
-    .hero-content > h1 {
-        font-size: 3rem;
+    .hero_content {
+        max-width: 1200px;
     }
 
-    .hero-content > p {
-        font-size: 1.3rem;
+    .hero_title {
+        font-size: 64px;
+    }
+
+    .hero_description {
+        font-size: 32px;
         margin-bottom: 4rem;
     }
 
