@@ -549,6 +549,7 @@ input, select, textarea {
   .project-detail {
     align-items: flex-start;
     padding: 25px;
+    max-width: 380px;
   }
   .project-detail_grid {
     display: flex;
@@ -567,7 +568,7 @@ input, select, textarea {
     margin-top: auto;
   }
   .skill-bar__desktop .skills-list {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 }
 .skill-detail {
@@ -860,21 +861,24 @@ input, select, textarea {
     font-size: 24px;
     padding-inline: 0;
   }
-  .project-section_list {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 1rem 2rem;
-  }
-  .project-section_list > li {
-    display: flex;
-    width: 30%;
+  .carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2rem;
   }
   .project-section_list.carousel {
+    width: 100%;
+    flex-direction: row;
+    gap: 20px;
+    align-items: stretch;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin: 0;
+    flex-wrap: nowrap;
+    transition: all 0.5s ease-in-out;
+  }
+  .project-section_list.carousel > li {
+    display: flex;
+    flex: 0 0 386.67px;
   }
   .button-bar {
     align-self: center;
@@ -895,6 +899,13 @@ input, select, textarea {
   }
   .prev-btn:active, .next-btn:active {
     transform: translateY(5px);
+  }
+  .prev-btn.inactive, .next-btn.inactive {
+    color: #606060;
+  }
+  .prev-btn.inactive:hover, .next-btn.inactive:hover {
+    border: 2px solid var(--secondary-blue);
+    cursor: not-allowed;
   }
 }
 .skills-section {

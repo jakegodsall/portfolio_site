@@ -215,6 +215,7 @@
 	.project-detail {
 		align-items: flex-start;
 		padding: 25px;
+		max-width: 380px;
 	}
 
 	.project-detail_grid {
@@ -238,7 +239,7 @@
 	}
 
 	.skill-bar__desktop .skills-list {
-		flex-wrap: nowrap;
+		flex-wrap: wrap;
 	}
 
 }
