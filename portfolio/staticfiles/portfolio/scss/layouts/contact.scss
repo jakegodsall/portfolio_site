@@ -27,3 +27,15 @@
     font-size: 36px;
   }
 }
+
+@media screen and (min-width: 900px) {
+  .contact-section_title {
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+
+  .contact-section_description {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+}

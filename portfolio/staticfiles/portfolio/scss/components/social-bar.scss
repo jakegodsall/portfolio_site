@@ -9,3 +9,25 @@
 
 	border: 1px solid var(--secondary-blue);
 }
+
+.icon-gmail, .icon-linkedin, .icon-frontendmentor {
+	width: 30px;
+	height: 30px;
+}
+
+.icon-github {
+	width: 24px;
+	height: 24px;
+}
+
+@media screen and (min-width: 900px) {
+	.icon-gmail, .icon-linkedin, .icon-frontendmentor {
+		width: 45px;
+		height: 45px;
+	}
+
+	.icon-github {
+	width: 36px;
+	height: 36px;
+}
+}
