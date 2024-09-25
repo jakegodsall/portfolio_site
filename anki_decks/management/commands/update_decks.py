@@ -1,0 +1,36 @@
+import os
+from django.core.management.base import BaseCommand
+from django.core.files import File
+
+from anki_decks.models import FlashcardDeck
+from anki_decks.anki_service import AnkiDeckExporter
+
+
+class Command(BaseCommand):
+    help = "Export anki decks and update the database"
+
+    def handle(self, *args, **kwargs):
+        anki_collection_path = os.getenv('ANKI_COLLECTION_PATH')
+        anki_collection_prefix = os.getenv('ANKI_COLLECTION_PREFIX')
+
+        # Instantiate the Anki deck exporter
+        exporter = AnkiDeckExporter(anki_collection_path)
+
+        deck_names = exporter.get_deck_names_by_prefix(anki_collection_prefix)
+        # Loop through decks in the collection
+        for deck_name in deck_names:
+            # Export the decks
+            export_file_path = exporter.export_deck(deck_name)
+
+            # Check if the deck exists in the database
+            existing, created = FlashcardDeck.objects.get_or_create(name=deck_name)
+
+            # Open the exported file and save it to the FileField
+            with open(export_file_path, 'rb') as f:
+                file_data = File(f)
+
+                # Update the existing deck or save a new entry
+                if created:
+                    existing.deck.save(f'{deck_name}.apkg', file_data)
+                else:
+                    existing.update_upload(file_data)

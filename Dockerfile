@@ -1,4 +1,18 @@
-FROM python:3.12-alpine
+# Use an official Python image
+FROM python:3.12-slim
+
+# Install required system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    rustc \
+    cargo \
+    git \
+    libffi-dev \
+    libssl-dev \
+    libsqlite3-dev \
+    zlib1g-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
