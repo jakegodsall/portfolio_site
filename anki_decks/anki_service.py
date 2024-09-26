@@ -15,6 +15,12 @@ class AnkiDeckExporter:
         filtered_decks = [deck for deck in decks if deck['name'].startswith(prefix)]
         return filtered_decks
 
+    def get_decks_by_array(self, deck_names):
+        # Get decks by an array of deck names
+        decks = self.col.decks.all()
+        filtered_decks = [deck for deck in decks if deck['name'] in deck_names]
+        return decks
+
     def get_deck_names(self, prefix):
         # Get names of all decks
         decks = self.col.decks.all()
@@ -25,6 +31,8 @@ class AnkiDeckExporter:
         filtered_decks = self.get_decks_by_prefix(prefix)
         deck_names = [deck['name'] for deck in filtered_decks]
         return deck_names
+
+
 
     def get_cards_from_deck(self, deck_id):
         # Get all cards from a specific deck by deck_id
