@@ -9,6 +9,8 @@ from django.conf import settings
 from anki_decks.models import FlashcardDeck
 from anki_decks.anki_service import AnkiDeckExporter
 
+from anki_decks.utils import download_anki_db_from_s3
+
 
 class Command(BaseCommand):
     help = "Export anki decks and update the database"
@@ -18,13 +20,16 @@ class Command(BaseCommand):
         s3.download_file(s3_bucket, s3_key, download_path)
 
     def handle(self, *args, **kwargs):
-        if not Path(settings.ANKI_COLLECTION_PATH).is_file():
+        database_path = settings.ANKI_COLLECTION_PATH
+
+        if not Path(database_path).is_file():
             self.stdout.write(f"File not found locally. Downloading from S3")
+            database_path = download_anki_db_from_s3()
         else:
-            self.stdout.write(f"Found local database at: {settings.ANKI_COLLECTION_PATH}")
+            self.stdout.write(f"Found local database at: {database_path}")
 
         # Instantiate the Anki deck exporter
-        exporter = AnkiDeckExporter(settings.ANKI_COLLECTION_PATH)
+        exporter = AnkiDeckExporter(database_path)
 
         if len(settings.ANKI_DECKS) == 1 and settings.ANKI_DECKS[0] == '*':
             deck_names = exporter.get_deck_names()  # Process all decks
