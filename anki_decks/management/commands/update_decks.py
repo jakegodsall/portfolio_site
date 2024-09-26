@@ -1,6 +1,7 @@
 import os
 from django.core.management.base import BaseCommand
 from django.core.files import File
+from django.conf import settings
 
 from anki_decks.models import FlashcardDeck
 from anki_decks.anki_service import AnkiDeckExporter
@@ -10,13 +11,17 @@ class Command(BaseCommand):
     help = "Export anki decks and update the database"
 
     def handle(self, *args, **kwargs):
-        anki_collection_path = os.getenv('ANKI_COLLECTION_PATH')
-        anki_collection_prefix = os.getenv('ANKI_COLLECTION_PREFIX')
+        anki_collection_path = settings.ANKI_COLLECTION_PATH
+        anki_decks = settings.ANKI_DECKS
 
         # Instantiate the Anki deck exporter
         exporter = AnkiDeckExporter(anki_collection_path)
 
-        deck_names = exporter.get_deck_names_by_prefix(anki_collection_prefix)
+        if len(anki_decks) == 1 and anki_decks[0] == '*':
+            deck_names = exporter.get_deck_names()  # Process all decks
+        else:
+            deck_names = anki_decks  # Process only the decks specified in settings
+
         # Loop through decks in the collection
         for deck_name in deck_names:
             # Export the decks

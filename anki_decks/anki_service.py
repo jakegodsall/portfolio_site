@@ -9,19 +9,21 @@ class AnkiDeckExporter:
         self.collection_path = Path(collection_path)
         self.col = Collection(str(self.collection_path))
 
+    def get_decks(self):
+        # Get all decks
+        return self.col.decks.all()
+
     def get_decks_by_prefix(self, prefix):
         # Get all decks and filter by a prefix
         decks = self.col.decks.all()
-        filtered_decks = [deck for deck in decks if deck['name'].startswith(prefix)]
-        return filtered_decks
+        return [deck for deck in decks if deck['name'].startswith(prefix)]
 
     def get_decks_by_array(self, deck_names):
         # Get decks by an array of deck names
         decks = self.col.decks.all()
-        filtered_decks = [deck for deck in decks if deck['name'] in deck_names]
-        return filtered_decks
+        return [deck for deck in decks if deck['name'] in deck_names]
 
-    def get_deck_names(self, prefix):
+    def get_deck_names(self):
         # Get names of all decks
         decks = self.col.decks.all()
         return [deck['name'] for deck in decks]
@@ -29,15 +31,11 @@ class AnkiDeckExporter:
     def get_deck_names_by_prefix(self, prefix):
         # Get names of decks that match the prefix
         filtered_decks = self.get_decks_by_prefix(prefix)
-        deck_names = [deck['name'] for deck in filtered_decks]
-        return deck_names
-
-
+        return [deck['name'] for deck in filtered_decks]
 
     def get_cards_from_deck(self, deck_id):
         # Get all cards from a specific deck by deck_id
-        cards = self.col.db.all(f'SELECT * FROM cards WHERE did={deck_id}')
-        return cards
+        return self.col.db.all(f'SELECT * FROM cards WHERE did={deck_id}')
 
     def export_deck(self, deck_name, export_path='/tmp'):
         # Export a deck by name to a specified path
