@@ -32,5 +32,7 @@ CSRF_COOKIE_DOMAIN = 'None'
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost:8000']
 
-ANKI_USER = 'jake'
-ANKI_COLLECTION_PATH = '/code/anki_database/collection.anki2'
+ANKI_USER = os.getenv('ANKI_USER', 'User 1')
+ANKI_COLLECTION_PATH = os.getenv('ANKI_COLLECTION_PATH')
+ANKI_DECKS = os.getenv('ANKI_DECKS', '*').split(',')
+

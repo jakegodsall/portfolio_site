@@ -18,53 +18,50 @@ class Command(BaseCommand):
         s3.download_file(s3_bucket, s3_key, download_path)
 
     def handle(self, *args, **kwargs):
-        # Path for the sqlite anki database
-        anki_collection_path = settings.ANKI_COLLECTION_PATH
-        # list of deck names to export
-        anki_decks = settings.ANKI_DECKS
-
-        print("PATH", anki_collection_path)
-
-        if not Path(anki_collection_path).is_file():
+        if not Path(settings.ANKI_COLLECTION_PATH).is_file():
             self.stdout.write(f"File not found locally. Downloading from S3")
         else:
-            self.stdout.write(f"Found local database at: {anki_collection_path}")
+            self.stdout.write(f"Found local database at: {settings.ANKI_COLLECTION_PATH}")
 
         # Instantiate the Anki deck exporter
-        exporter = AnkiDeckExporter(anki_collection_path)
+        exporter = AnkiDeckExporter(settings.ANKI_COLLECTION_PATH)
 
-        if len(anki_decks) == 1 and anki_decks[0] == '*':
+        if len(settings.ANKI_DECKS) == 1 and settings.ANKI_DECKS[0] == '*':
             deck_names = exporter.get_deck_names()  # Process all decks
         else:
-            deck_names = anki_decks  # Process only the decks specified in settings
+            deck_names = settings.ANKI_DECKS  # Process only the decks specified in settings
 
         # Loop through decks in the collection
         for deck_name in deck_names:
-            deck_name = deck_name.split('::')[-1]
-            # Export the decks
-            export_file_path = exporter.export_deck(deck_name, '')
+            if deck_name not in exporter.get_deck_names():
+                self.stdout.write(f"{deck_name} deck was not found in the database.")
+                continue
+
+            new_deck_name = '-'.join(deck_name.split('::'))
+
+            # Export the deck to a temporary file
+            export_file_path = exporter.export_deck(deck_name)
 
             # Check if the deck exists in the database
-            existing, created = FlashcardDeck.objects.get_or_create(name=deck_name)
+            existing, created = FlashcardDeck.objects.get_or_create(name=new_deck_name)
 
-            # Open the exported file and save it to the FileField
+            # Open the temporary file and save it to the FileField
             with open(export_file_path, 'rb') as f:
                 file_data = File(f)
 
-                # Extract the final part of the deck name after the last '::'
-                valid_filename = deck_name.split("::")[-1]
-
-                # Clean the final part for the filename
-                valid_filename = valid_filename + '.apkg'
+                output_file = new_deck_name + '.apkg'
 
                 # Save the file, overwriting any existing files with the same name
                 if created:
-                    existing.deck.save(valid_filename, file_data)
+                    existing.deck.save(output_file, file_data)
                 else:
-                    # Delete the existing file first (if you want to replace it)
+                    # Delete the existing file first
                     if existing.deck:
                         existing.deck.delete(save=False)
 
-                    # Overwrite the existing file with the same name
-                    existing.deck.save(valid_filename, file_data)
-            self.stdout.write(f"{deck_name} deck has been exported")
+                    existing.update_upload(output_file, file_data)
+
+            # Clean up the temporary file manually if needed
+            os.remove(export_file_path)
+
+            self.stdout.write(f"{new_deck_name} deck has been exported")

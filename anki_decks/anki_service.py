@@ -1,7 +1,7 @@
 from pathlib import Path
 from anki.storage import Collection
 from anki.exporting import AnkiPackageExporter
-
+from django.core.files.temp import NamedTemporaryFile
 
 class AnkiDeckExporter:
     def __init__(self, collection_path):
@@ -26,7 +26,8 @@ class AnkiDeckExporter:
     def get_deck_names(self):
         # Get names of all decks
         decks = self.col.decks.all()
-        return [deck['name'] for deck in decks]
+        deck_names = [deck['name'] for deck in decks]
+        return deck_names
 
     def get_deck_names_by_prefix(self, prefix):
         # Get names of decks that match the prefix
@@ -37,8 +38,8 @@ class AnkiDeckExporter:
         # Get all cards from a specific deck by deck_id
         return self.col.db.all(f'SELECT * FROM cards WHERE did={deck_id}')
 
-    def export_deck(self, deck_name, export_path='/tmp'):
-        # Export a deck by name to a specified path
+    def export_deck(self, deck_name):
+        # Export a deck by name to a temporary file
         deck_id = self.col.decks.id(deck_name)
 
         # Create an AnkiPackageExporter and set it to export the specific deck
@@ -50,14 +51,12 @@ class AnkiDeckExporter:
         # Exclude scheduling data if desired
         exporter.includeSched = False
 
-        # Set the export file path
-        export_file_path = Path(export_path) / deck_name
-        export_file_path_str = str(export_file_path) + ".apkg"
+        # Create a temporary file for the export
+        with NamedTemporaryFile(suffix='.apkg', delete=False) as tmp:
+            export_file_path = tmp.name
+            exporter.exportInto(export_file_path)
 
-        # Perform the export
-        exporter.exportInto(export_file_path_str)
-
-        return export_file_path_str
+        return export_file_path
 
 
 

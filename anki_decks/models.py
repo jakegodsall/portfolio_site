@@ -15,8 +15,8 @@ class FlashcardDeck(models.Model):
     def __str__(self):
         return f"Deck: {self.name}"
 
-    def update_upload(self, new_file):
-        self.deck = new_file
+    def update_upload(self, file_name, file_data):
+        self.deck.save(file_name, file_data)
         self.most_recent_upload = timezone.now()
         self.number_of_uploads += 1
         self.save()

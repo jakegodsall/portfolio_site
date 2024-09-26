@@ -21,24 +21,8 @@ services:
       - "8000:8000"
     depends_on:
       - db
-    environment:
-      - DEBUG=True
-      - SECRET_KEY=${SECRET_KEY}
-      - DJANGO_SETTINGS_MODULE=portfolio_site.settings.development
-      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
-      - EMAIL_HOST=${EMAIL_HOST}
-      - EMAIL_PORT=${EMAIL_PORT}
-      - EMAIL_USE_TLS=${EMAIL_USE_TLS}
-      - EMAIL_HOST_USER=${EMAIL_HOST_USER}
-      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
-      - RECIPIENT_EMAIL=${RECIPIENT_EMAIL}
-      - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_HOST=db
-      - POSTGRES_PORT=5432
-      - ANKI_COLLECTION_PATH=${ANKI_COLLECTION_PATH}
-      - ANKI_COLLECTION_PREFIX=${ANKI_COLLECTION_PREFIX}
+    env_file:
+      .env
 
 volumes:
   postgres_data:
