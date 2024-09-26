@@ -16,6 +16,7 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
+      - ~/Library/Application Support/Anki2/jake/collection.anki2:/code/anki_database/collection.anki2
     ports:
       - "8000:8000"
     depends_on:

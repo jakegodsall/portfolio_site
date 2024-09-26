@@ -51,12 +51,13 @@ class AnkiDeckExporter:
         exporter.includeSched = False
 
         # Set the export file path
-        export_file_path = f'{export_path}/{deck_name}.apkg'
+        export_file_path = Path(export_path) / deck_name
+        export_file_path_str = str(export_file_path) + ".apkg"
 
         # Perform the export
-        exporter.exportInto(export_file_path)
+        exporter.exportInto(export_file_path_str)
 
-        return export_file_path
+        return export_file_path_str
 
 
 
