@@ -25,3 +25,4 @@ node_modules/
 # Project Files
 .env
 project-files/
+collection.anki2
