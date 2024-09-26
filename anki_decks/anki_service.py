@@ -19,7 +19,7 @@ class AnkiDeckExporter:
         # Get decks by an array of deck names
         decks = self.col.decks.all()
         filtered_decks = [deck for deck in decks if deck['name'] in deck_names]
-        return decks
+        return filtered_decks
 
     def get_deck_names(self, prefix):
         # Get names of all decks
