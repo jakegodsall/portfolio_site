@@ -31,3 +31,6 @@ EMAIL_TIMEOUT = 10
 CSRF_COOKIE_DOMAIN = 'None'
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost:8000']
+
+ANKI_USER = 'jake'
+ANKI_DECKS = ['Dev::C']
