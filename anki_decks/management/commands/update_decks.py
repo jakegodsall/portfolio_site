@@ -72,4 +72,5 @@ class Command(BaseCommand):
             self.stdout.write(f"{new_deck_name} deck has been exported")
 
             if database_is_temp:
-                remove_anki_db_from_s3()
+                os.remove(database_path)
+                print(f"Deleted the local database file: {database_path}")
