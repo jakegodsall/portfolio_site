@@ -1,8 +1,7 @@
 import os
-import time
 from pathlib import Path
+import shutil
 
-import boto3
 from django.core.management.base import BaseCommand
 from django.core.files import File
 from django.conf import settings
@@ -10,20 +9,22 @@ from django.conf import settings
 from anki_decks.models import FlashcardDeck
 from anki_decks.anki_service import AnkiDeckExporter
 
-from anki_decks.utils import download_anki_db_from_s3, remove_anki_db_from_s3
+from anki_decks.utils import download_anki_db_from_s3, delete_directory
 
 
 class Command(BaseCommand):
     help = "Export anki decks and update the database"
 
     def handle(self, *args, **kwargs):
-        database_path = settings.ANKI_COLLECTION_PATH
+        database_dir = settings.ANKI_COLLECTION_PATH
+        database_filename = settings.ANKI_COLLECTION_FILE_NAME
+        database_path = Path(database_dir) / database_filename
 
         database_is_temp = False
 
         if not Path(database_path).is_file():
             self.stdout.write(f"File not found locally. Downloading from S3")
-            database_path = download_anki_db_from_s3()
+            database_dir, database_filename = download_anki_db_from_s3()
             database_is_temp = True
         else:
             self.stdout.write(f"Found local database at: {database_path}")
@@ -69,5 +70,4 @@ class Command(BaseCommand):
             self.stdout.write(f"{new_deck_name} deck has been exported")
 
         if database_is_temp:
-            os.remove(database_path)
-            print(f"Deleted the local database file: {database_path}")
+            delete_directory(database_dir)

@@ -1,5 +1,6 @@
 import time
 import os
+import shutil
 from pathlib import Path
 import boto3
 from django.conf import settings
@@ -16,7 +17,10 @@ def download_anki_db_from_s3():
     # Log the bucket and key to ensure they are correct
     print(f"Downloading from bucket: {s3_bucket}, key: {s3_key}")
 
-    local_db_path = Path(settings.ANKI_COLLECTION_PATH)
+    local_db_dir = settings.ANKI_COLLECTION_PATH
+    local_db_filename = settings.ANKI_COLLECTION_FILE_NAME
+
+    local_db_path = Path(local_db_dir) / local_db_filename
     local_db_path.parent.mkdir(parents=True, exist_ok=True)
 
     try:
@@ -42,7 +46,7 @@ def download_anki_db_from_s3():
     # Change permissions on the database file
     os.chmod(local_db_path, 0o644)
 
-    return local_db_path
+    return local_db_dir, local_db_filename
 
 
 def remove_anki_db_from_s3():
@@ -54,3 +58,10 @@ def remove_anki_db_from_s3():
 
     s3_client.delete_object(Bucket=s3_bucket, Key=s3_key)
     print(f"The file at {s3_key} has been deleted from the {s3_key} bucket")
+
+def delete_directory(dir_path):
+    if dir_path.exists() and dir_path.is_dir():
+        shutil.rmtree(dir_path)
+        print(f"Deleted the local database directory: {dir_path}")
+    else:
+        print(f"Error: Could not find the local directory to delete: {dir_path}")
