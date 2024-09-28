@@ -68,6 +68,6 @@ class Command(BaseCommand):
 
             self.stdout.write(f"{new_deck_name} deck has been exported")
 
-            if database_is_temp:
-                os.remove(database_path)
-                print(f"Deleted the local database file: {database_path}")
+        if database_is_temp:
+            os.remove(database_path)
+            print(f"Deleted the local database file: {database_path}")
