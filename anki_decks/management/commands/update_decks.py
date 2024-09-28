@@ -66,9 +66,6 @@ class Command(BaseCommand):
 
                     existing.update_upload(output_file, file_data)
 
-            # Clean up the temporary file manually if needed
-            os.remove(export_file_path)
-
             self.stdout.write(f"{new_deck_name} deck has been exported")
 
             if database_is_temp:
