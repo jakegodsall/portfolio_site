@@ -59,7 +59,10 @@ def remove_anki_db_from_s3():
     s3_client.delete_object(Bucket=s3_bucket, Key=s3_key)
     print(f"The file at {s3_key} has been deleted from the {s3_key} bucket")
 
+
 def delete_directory(dir_path):
+    dir_path = Path(dir_path)
+
     if dir_path.exists() and dir_path.is_dir():
         shutil.rmtree(dir_path)
         print(f"Deleted the local database directory: {dir_path}")

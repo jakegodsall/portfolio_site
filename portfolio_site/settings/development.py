@@ -34,5 +34,6 @@ CSRF_TRUSTED_ORIGINS = ['http://localhost:8000']
 
 ANKI_USER = os.getenv('ANKI_USER', 'User 1')
 ANKI_COLLECTION_PATH = os.getenv('ANKI_COLLECTION_PATH')
+ANKI_COLLECTION_FILE_NAME = os.getenv('ANKI_COLLECTION_FILE_NAME')
 ANKI_DECKS = os.getenv('ANKI_DECKS', '*').split(',')
 

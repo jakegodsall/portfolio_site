@@ -32,6 +32,8 @@ class Command(BaseCommand):
         # Instantiate the Anki deck exporter
         exporter = AnkiDeckExporter(database_path)
 
+        print("Database Path", database_path)
+
         if len(settings.ANKI_DECKS) == 1 and settings.ANKI_DECKS[0] == '*':
             deck_names = exporter.get_deck_names()  # Process all decks
         else:
