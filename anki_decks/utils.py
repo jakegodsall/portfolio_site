@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import boto3
 from django.conf import settings
@@ -17,6 +18,9 @@ def download_anki_db_from_s3():
     local_db_path = Path(settings.ANKI_COLLECTION_PATH)
     local_db_path.parent.mkdir(parents=True, exist_ok=True)
 
+    # Change permissions on the database file
+    os.chmod(local_db_path, 0o644)
+
     try:
         s3_client.download_file(s3_bucket, s3_key, str(local_db_path))
         print(f"Anki database downloaded to {local_db_path}")
@@ -25,7 +29,7 @@ def download_anki_db_from_s3():
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
-    return s3_key
+    return local_db_path
 
 
 def remove_anki_from_s3():
