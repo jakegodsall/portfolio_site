@@ -4,6 +4,8 @@ from django.conf import settings
 
 
 def download_anki_db_from_s3():
+    """Download the database file from S3 for processing decks"""
+
     s3_client = boto3.client('s3')
 
     s3_bucket = settings.AWS_STORAGE_BUCKET_NAME
@@ -24,3 +26,14 @@ def download_anki_db_from_s3():
         print(f"An error occurred: {str(e)}")
 
     return s3_key
+
+
+def remove_anki_from_s3():
+    """Delete the database file from S3 after processing"""
+    s3_client = boto3.client('s3')
+
+    s3_bucket = settings.AWS_STORAGE_BUCKET_NAME
+    s3_key = 'anki_decks/database/collection.anki2'
+
+    s3_client.delete_object(Bucket=s3_bucket, Key=s3_key)
+    print(f"The file at {s3_key} has been deleted from the {s3_key} bucket")
