@@ -10,7 +10,7 @@ from django.conf import settings
 from anki_decks.models import FlashcardDeck
 from anki_decks.anki_service import AnkiDeckExporter
 
-from anki_decks.utils import download_anki_db_from_s3, remove_anki_from_s3
+from anki_decks.utils import download_anki_db_from_s3, remove_anki_db_from_s3
 
 
 class Command(BaseCommand):
@@ -25,16 +25,6 @@ class Command(BaseCommand):
             self.stdout.write(f"File not found locally. Downloading from S3")
             database_path = download_anki_db_from_s3()
             database_is_temp = True
-
-            retries = 5
-            while not Path(database_path).is_file() and retries > 0:
-                self.stdout.write(f"Waiting for the file to be accessible... ({retries} retries left")
-                time.sleep(1)
-                retries -= 1
-
-            if not Path(database_path).is_file():
-                self.stdout.write(f"Error: File {database_path} not accessible after downloading.")
-                return
         else:
             self.stdout.write(f"Found local database at: {database_path}")
 
@@ -82,4 +72,4 @@ class Command(BaseCommand):
             self.stdout.write(f"{new_deck_name} deck has been exported")
 
             if database_is_temp:
-                remove_anki_from_s3()
+                remove_anki_db_from_s3()

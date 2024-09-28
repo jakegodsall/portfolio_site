@@ -1,3 +1,4 @@
+import time
 import os
 from pathlib import Path
 import boto3
@@ -18,21 +19,33 @@ def download_anki_db_from_s3():
     local_db_path = Path(settings.ANKI_COLLECTION_PATH)
     local_db_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # Change permissions on the database file
-    os.chmod(local_db_path, 0o644)
-
     try:
         s3_client.download_file(s3_bucket, s3_key, str(local_db_path))
         print(f"Anki database downloaded to {local_db_path}")
     except s3_client.exceptions.NoSuchKey:
         print(f"Error: The object with key {s3_key} was not found in bucket {s3_bucket}.")
+        return None
     except Exception as e:
         print(f"An error occurred: {str(e)}")
+        return None
+
+    retries = 5
+    while not Path(local_db_path).is_file() and retries > 0:
+        print(f"Waiting for the file to be accessible... ({retries} retries left)")
+        time.sleep(1)
+        retries -= 1
+
+    if not Path(local_db_path).is_file():
+        print(f"Error: File {local_db_path} not accessible after downloading.")
+        return None
+
+    # Change permissions on the database file
+    os.chmod(local_db_path, 0o644)
 
     return local_db_path
 
 
-def remove_anki_from_s3():
+def remove_anki_db_from_s3():
     """Delete the database file from S3 after processing"""
     s3_client = boto3.client('s3')
 
