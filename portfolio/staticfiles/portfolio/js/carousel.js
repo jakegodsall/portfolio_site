@@ -9,6 +9,13 @@ const totalProjects = projects.length;
 const projectsToShow = 3; // Show 3 slides at a time
 const maxIndex = totalProjects - projectsToShow;
 
+console.log(totalProjects)
+
+if (totalProjects < 4) {
+  prevBtn.style.display = 'none';
+  nextBtn.style.display = 'none';
+}
+
 toggleInactiveState(prevBtn, currentIndex, 0);
 toggleInactiveState(nextBtn, currentIndex, maxIndex);
 
