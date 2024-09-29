@@ -470,6 +470,16 @@ input, select, textarea {
   padding-bottom: 16px;
 }
 
+.caret-toggle {
+  display: block;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.caret-toggle.active {
+  transform: rotate(180deg);
+}
+
 @media screen and (min-width: 680px) {
   .project-detail {
     padding-bottom: 0;
@@ -535,14 +545,6 @@ input, select, textarea {
   }
   .project-detail_extended-content {
     font-size: 18px;
-  }
-  .caret-toggle {
-    display: block;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-  }
-  .caret-toggle.active {
-    transform: rotate(180deg);
   }
 }
 @media screen and (min-width: 900px) {

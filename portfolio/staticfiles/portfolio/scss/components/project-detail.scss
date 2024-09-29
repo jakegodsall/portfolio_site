@@ -111,10 +111,20 @@
 	transition: all 0.5s ease-in-out;
 }
 
-	.project-detail_extended-content.open {
-		max-height: 1000px;
-		padding-bottom: 16px;
+.project-detail_extended-content.open {
+	max-height: 1000px;
+	padding-bottom: 16px;
+}
+
+.caret-toggle {
+		display: block;
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
 	}
+
+.caret-toggle.active {
+	transform: rotate(180deg);
+}
 
 @media screen and (min-width: 680px) {
 	.project-detail {
@@ -198,16 +208,6 @@
 
 	.project-detail_extended-content {
 		font-size: 18px;
-	}
-
-	.caret-toggle {
-		display: block;
-		cursor: pointer;
-		transition: all 0.5s ease-in-out;
-	}
-
-	.caret-toggle.active {
-		transform: rotate(180deg);
 	}
 }
 
