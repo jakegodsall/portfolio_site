@@ -4,7 +4,9 @@
     <div class="carousel-wrapper">
         <ul class="project-section_list carousel">
             {% for project in projects %}
-            <li>{% include "portfolio/partials/project/project-detail.html" with project=project %}</li>
+                {% if project.is_for_portfolio_section %}
+                    <li>{% include "portfolio/partials/project/project-detail.html" with project=project %}</li>
+                {% endif %}
             {% endfor %}
         </ul>
     </div>

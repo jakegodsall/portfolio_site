@@ -26,6 +26,7 @@ class Project(models.Model):
     live_site_url = models.URLField(blank=True)
     github_repo_url = models.URLField(blank=True)
     image = models.ImageField(upload_to='portfolio/project_images/', blank=True, null=True)
+    is_for_portfolio_section = models.BooleanField(default=False)
 
     skills = models.ManyToManyField(Skill, related_name='projects')
 
