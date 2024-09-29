@@ -935,6 +935,7 @@ input, select, textarea {
     border: 2px solid var(--secondary-blue);
     color: white;
     cursor: pointer;
+    font-size: 16px;
     transition: all 0.2s ease-in-out;
   }
   .prev-btn:hover, .next-btn:hover {
