@@ -1,1 +1,0 @@
-# django-anki-decks
