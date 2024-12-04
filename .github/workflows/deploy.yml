@@ -21,8 +21,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/portfolio_site:latest .
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/portfolio_site:latest
+          docker compose build
+          docker compose push
 #  deploy:
 #    runs-on: ubuntu-latest
 #    steps:
