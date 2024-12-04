@@ -7,9 +7,8 @@ on:
       - develop
 
 jobs:
-  package-job:
+  deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
