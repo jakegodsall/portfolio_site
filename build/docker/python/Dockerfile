@@ -1,5 +1,5 @@
 # Use an official Python image
-FROM python:3.12-slim
+FROM python:3.13-slim
 
 # Install required system dependencies
 RUN apt-get update && apt-get install -y \
@@ -22,14 +22,14 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /code
 
 # Copy the requirements file into the container
-COPY requirements.txt /code/
+COPY ./requirements.txt /code/
 
 # Install dependencies
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code
-COPY .. /code/
+COPY ../../../.. /code/
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
