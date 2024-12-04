@@ -21,7 +21,7 @@ jobs:
       - name: Deploy to EC2
         run: |
             ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_PUBLIC_IP }} << EOF
-              APP_DIR="/data"
+              APP_DIR="/data/app"
               cd "$APP_DIR"
               # Clone the repository if not already present
               if [ ! -d ".git" ]; then
