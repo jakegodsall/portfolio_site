@@ -19,7 +19,7 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-            ssh -o StrictHostKeyChecking=no ec2-user@your-ec2-public-ip << EOF
+            ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_PUBLIC_IP }} << EOF
               # Stop and remove the existing container (if any)
               docker-compose down || true
   
