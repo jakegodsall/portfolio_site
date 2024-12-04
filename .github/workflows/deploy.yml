@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: jakegodsall-portfolio
 
     steps:
       - name: Checkout code
