@@ -3,6 +3,8 @@ import dj_database_url
 
 from .base import *
 
+DEBUG = False
+
 # Security
 
 SECURE_SSL_REDIRECT = True

@@ -14,13 +14,12 @@ gunicorn==23.0.0
 idna==3.10
 jmespath==1.0.1
 Markdown==3.7
-orjson==3.10.7
 packaging==24.1
 pillow==10.4.0
 protobuf==5.28.2
-psycopg2-binary==2.9.9
 PySocks==1.7.1
 python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
 requests==2.32.3
 s3transfer==0.10.2
 setuptools==72.1.0
