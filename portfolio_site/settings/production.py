@@ -1,5 +1,4 @@
 import os
-import dj_database_url
 
 from .base import *
 
@@ -10,26 +9,23 @@ DEBUG = False
 SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_HSTS_SECONDS = 31536000  # 1 year
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Include subdomains
-SECURE_HSTS_PRELOAD = True  # Enable HSTS preload list
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
-# AWS S3
-
+# AWS S3 for static and media
 INSTALLED_APPS += ['storages']
-
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
-
 AWS_S3_FILE_OVERWRITE = True
-AWS_DEFAULT_ACL = None  # Set default ACL to None to avoid public access by default
-AWS_QUERYSTRING_AUTH = False  # Set this to False if you don't want query string auth for the files
+AWS_DEFAULT_ACL = None
+AWS_QUERYSTRING_AUTH = False
 
 # For static files
 STATICFILES_DIRS = [
@@ -47,9 +43,10 @@ MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_MEDIA_LOCATION}/'
 # Database
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'data' / 'database.db'
+    }
 }
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", '127.0.0.1').split(",")
