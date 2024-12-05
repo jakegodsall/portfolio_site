@@ -21,7 +21,7 @@ jobs:
       - name: Build and push Docker image
         run: |
           IMAGE_NAME="${{ secrets.DOCKERHUB_USERNAME }}/portfolio"
-          docker build -f build/docker/python/Dockerfile -t $IMAGE_NAME:latest .
+          docker build --platform linux/arm64 -f build/docker/python/Dockerfile -t $IMAGE_NAME:latest .
           docker push $IMAGE_NAME:latest
 
   deploy:
