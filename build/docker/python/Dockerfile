@@ -37,7 +37,7 @@ COPY . /app/
 
 # Set Django settings module for production during build (if necessary for collectstatic)
 # This can be overridden at runtime using docker-compose or environment variables.
-ENV DJANGO_SETTINGS_MODULE=mysite.settings.production
+ENV DJANGO_SETTINGS_MODULE=portfolio_site.settings.production
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
@@ -71,4 +71,4 @@ COPY --from=builder /app /app
 EXPOSE 8000
 
 # In production, you would run Gunicorn, for example:
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "mysite.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "portfolio_site.wsgi:application"]
