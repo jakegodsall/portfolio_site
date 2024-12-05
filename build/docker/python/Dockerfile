@@ -3,24 +3,23 @@
 ########################################
 # Builder stage
 ########################################
-FROM --platform=linux/arm64 python:3.9-alpine AS builder
+FROM python:3.9-alpine AS builder
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Install required system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    rustc \
+RUN apk update && apk add --no-cache \
+    build-base \
+    rust \
     cargo \
     git \
     libffi-dev \
-    libssl-dev \
-    libsqlite3-dev \
-    zlib1g-dev \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+    openssl-dev \
+    sqlite-dev \
+    zlib-dev \
+    curl
 
 
 # Set the working directory
@@ -42,7 +41,7 @@ ENV DJANGO_SETTINGS_MODULE=portfolio_site.settings.production
 ########################################
 # Final Runtime Stage
 ########################################
-FROM --platform=linux/arm64 python:3.9-alpine
+FROM python:3.9-alpine
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -51,11 +50,10 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 
 # Install runtime dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apk update && apk add --no-cache \
     libffi-dev \
-    libssl-dev \
-    libsqlite3-dev \
-    && rm -rf /var/lib/apt/lists/*
+    openssl-dev \
+    sqlite-dev
 
 # Copy installed Python packages from builder
 COPY --from=builder /usr/local/lib/python3.13/site-packages /usr/local/lib/python3.13/site-packages
