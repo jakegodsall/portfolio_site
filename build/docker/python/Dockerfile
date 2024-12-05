@@ -39,9 +39,6 @@ COPY . /app/
 # This can be overridden at runtime using docker-compose or environment variables.
 ENV DJANGO_SETTINGS_MODULE=portfolio_site.settings.production
 
-# Collect static files
-RUN python manage.py collectstatic --noinput
-
 ########################################
 # Final Runtime Stage
 ########################################
