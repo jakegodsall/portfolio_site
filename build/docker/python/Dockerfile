@@ -3,7 +3,7 @@
 ########################################
 # Builder stage
 ########################################
-FROM python:3.13-slim AS builder
+FROM --platform=linux/arm64 python:3.13-slim AS builder
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -42,7 +42,7 @@ ENV DJANGO_SETTINGS_MODULE=portfolio_site.settings.production
 ########################################
 # Final Runtime Stage
 ########################################
-FROM python:3.13-slim
+FROM --platform=linux/arm64 python:3.13-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
