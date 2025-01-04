@@ -8,7 +8,6 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV DJANGO_ENV=development
 
-
 # Install required system dependencies
 RUN apk update && apk add --no-cache \
     build-base \
@@ -44,9 +43,9 @@ ENV DJANGO_SETTINGS_MODULE=portfolio_site.settings.production
 FROM python:3.13-alpine
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    DJANGO_ENV=production
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV DJANGO_ENV=production
 
 WORKDIR /app
 
