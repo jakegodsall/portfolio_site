@@ -31,7 +31,7 @@ jobs:
           docker push $IMAGE_NAME:latest
 
       - name: Deploy to production
-        uses: appleboy/ssh-action@v0.1.7
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
