@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -30,14 +30,19 @@ jobs:
           docker build -f build/docker/python/Dockerfile -t $IMAGE_NAME:latest .
           docker push $IMAGE_NAME:latest
 
-      - name: Deploy to production
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            IMAGE_NAME="${{ secrets.DOCKERHUB_USERNAME }}/django-portfolio"
+            echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+            IMAGE_NAME="${{ secrets.DOCKERHUB_USERNAME }}/portfolio"
             docker pull $IMAGE_NAME:latest
             docker stop portfolio || true
             docker rm portfolio || true
