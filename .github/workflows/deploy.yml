@@ -37,7 +37,8 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull my-docker-repo/my-django-app:latest
-            docker stop django-app || true
-            docker rm django-app || true
-            docker run -d --name django-app -p 8000:8000 my-docker-repo/my-django-app:latest
+            IMAGE_NAME="${{ secrets.DOCKERHUB_USERNAME }}/django-portfolio"
+            docker pull $IMAGE_NAME:latest
+            docker stop portfolio || true
+            docker rm portfolio || true
+            docker run -d --name portfolio -p 8000:8000 $IMAGE_NAME:latest
