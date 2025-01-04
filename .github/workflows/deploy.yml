@@ -48,6 +48,6 @@ jobs:
             docker rm portfolio 2>/dev/null || true
             docker run -d --name portfolio -p 8000:8000 \
               -e DJANGO_ENV=production \
-              -e SECRET_KEY=${{ secrets.SECRET_KEY }}
+              -e SECRET_KEY=${{ secrets.SECRET_KEY }} \
               -e ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}
               $IMAGE_NAME:latest
