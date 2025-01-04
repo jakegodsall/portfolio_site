@@ -28,4 +28,3 @@ services:
 
 networks:
   portfolio:
-    driver: bridge
