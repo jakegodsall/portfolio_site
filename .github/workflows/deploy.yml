@@ -44,6 +44,6 @@ jobs:
             echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
             IMAGE_NAME="${{ secrets.DOCKERHUB_USERNAME }}/portfolio"
             docker pull $IMAGE_NAME:latest
-            docker stop portfolio || true
-            docker rm portfolio || true
+            docker stop portfolio 2>/dev/null || true
+            docker rm portfolio 2>/dev/null || true
             docker run -d --name portfolio -p 8000:8000 $IMAGE_NAME:latest
